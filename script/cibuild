@@ -1,0 +1,17 @@
+#!/bin/bash
+#====================================
+# @file   : cibuild
+# @brief  : Builds the docker images
+#           in the context of CI/CD (Travis)
+# @usage  : script/cibuild
+# @param  : none
+#====================================
+
+set -e
+
+DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo $FROM | sed 's/:/_/' | sed 's/\//_/')"
+docker build --build-arg from=$FROM -t $DOCKER_IMG_NAME .
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push $DOCKER_IMG_NAME
+
+echo "cibuild Done!"

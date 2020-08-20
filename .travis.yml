@@ -1,0 +1,55 @@
+language: cpp
+os: linux
+
+services:
+  - docker
+
+# git:
+#   submodules: false
+
+distro: focal
+
+jobs:
+    include:
+        - os: linux
+          name: "Ubuntu 20.04 LTS focal"
+          env:
+            - FROM='ubuntu:focal'
+        - os: linux
+          name: "Ubuntu 18.04 LTS bionic"
+          env:
+            - FROM='ubuntu:bionic'
+        - os: linux
+          name: "Ubuntu 16.04 LTS xenial"
+          env:
+            - FROM='ubuntu:xenial'
+        - os: linux
+          name: "Debian 10 buster"
+          env:
+            - FROM='debian:buster'
+        - os: linux
+          name: "Debian 9 stretch"
+          env:
+            - FROM='debian:stretch'
+        - os: linux
+          name: "openSUSE Leap 15.2"
+          env:
+            - FROM='opensuse/leap'
+        - os: linux
+          name: "Fedora 32"
+          env:
+            - FROM='fedora:32'
+        - os: linux
+          name: "Fedora 31"
+          env:
+            - FROM='fedora:31'
+        - os: linux
+          name: "Fedora 30"
+          env:
+            - FROM='fedora:30'
+        - os: linux
+          name: "CentOS 8"
+          env:
+            - FROM='centos:8'
+script:
+  - ./script/cibuild
