@@ -23,10 +23,7 @@ os: linux
 services:
   - docker
 
-# git:
-#   submodules: false
-
-distro: focal
+dist: focal
 
 jobs:
     include:
