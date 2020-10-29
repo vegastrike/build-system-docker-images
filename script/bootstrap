@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2020-08-22 ---"
+echo "--- bootstrap | 2020-10-28 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -217,7 +217,7 @@ then
                             git \
                             rpm-build \
                             clang
-elif [ $LINUX_ID == "fedora" ] && [ $LINUX_VERSION_ID -eq 32 ]
+elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 32 ] && [ $LINUX_VERSION_ID -lt 34 ])
 then
     dnf install -y \
                         git \
