@@ -25,9 +25,11 @@
 
 set -e
 
-DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo $FROM | sed 's/:/_/' | sed 's/\//_/')"
-docker build --build-arg from=$FROM -t $DOCKER_IMG_NAME .
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push $DOCKER_IMG_NAME
+if [ ${IS_RELEASE} -eq 1 ]; then
+	DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo $FROM | sed 's/:/_/' | sed 's/\//_/')"
+	docker build --build-arg from=$FROM -t $DOCKER_IMG_NAME .
+	# NOTE: Login done by a Git Hub Action prior to this script being run
+	docker push $DOCKER_IMG_NAME
+fi
 
 echo "cibuild Done!"
