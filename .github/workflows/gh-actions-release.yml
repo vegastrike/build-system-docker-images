@@ -6,10 +6,13 @@ on:
       - created
       - edited
 
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    environment:
+      name: production
 
     strategy:
       fail-fast: false
