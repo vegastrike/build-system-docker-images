@@ -26,7 +26,7 @@ jobs:
           - FROM:     'opensuse/leap'
           - FROM:     'fedora:33'
           - FROM:     'fedora:32'
-          - FROM:     'centos:8'
+          # - FROM:     'centos:8'
 
     steps:
     - name: Checkout repository
