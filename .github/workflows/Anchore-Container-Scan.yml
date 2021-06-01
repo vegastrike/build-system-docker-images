@@ -51,18 +51,16 @@ jobs:
         env:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
-          IS_RELEASE: 0
-        with:
-          build-args: |
-            from=${{ matrix.FROM }}
+          IS_RELEASE: 1
 
       - name: build local container
         uses: docker/build-push-action@v2
         env:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
-          IS_RELEASE: 0
+          IS_RELEASE: 1
         with:
+          build-args: from=${{ matrix.FROM }}
           tags: localbuild/${{ matrix.FROM }}
           push: false
           load: true
