@@ -52,6 +52,9 @@ jobs:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
           IS_RELEASE: 0
+        with:
+          build-args: |
+            from=${{ matrix.FROM }}
 
       - name: build local container
         uses: docker/build-push-action@v2
