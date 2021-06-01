@@ -48,6 +48,10 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+        env:
+          FROM:       ${{ matrix.FROM }}
+          MY_OS_NAME: linux
+          IS_RELEASE: 0
 
       - name: build local container
         uses: docker/build-push-action@v2
