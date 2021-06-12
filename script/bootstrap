@@ -5,7 +5,7 @@
 # @usage  : sudo script/bootstrap
 # @param  : none
 #====================================
-# Copyright (C) 2020 Stephen G. Tuggy <sgt@stephengtuggy.com>
+# Copyright (C) 2020-2021 Stephen G. Tuggy <sgt@stephengtuggy.com>
 #
 # This file is part of Vega Strike.
 #
@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2020-10-28 ---"
+echo "--- bootstrap | 2021-06-11 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -48,6 +48,7 @@ echo "LINUX_VERSION_ID = ${LINUX_VERSION_ID}"
 if [ $LINUX_ID == "debian" ] && [ $LINUX_CODENAME == "buster" ]
 then
     apt-get update
+    apt-get -qy upgrade
     apt-get -qy install \
                     git \
                     cmake \
@@ -77,6 +78,7 @@ then
 elif [ $LINUX_ID == "debian" ] && [ $LINUX_CODENAME == "stretch" ]
 then
     apt-get update
+    apt-get -qy upgrade
     apt-get -qy install \
                     git \
                     cmake \
@@ -106,6 +108,7 @@ then
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "focal" ]
 then
     apt-get update
+    apt-get -qy upgrade
     apt-get -qy install \
                     git \
                     cmake \
@@ -136,6 +139,7 @@ then
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "bionic" ]
 then
     apt-get update
+    apt-get -qy upgrade
     apt-get -qy install \
                     git \
                     cmake \
@@ -158,6 +162,7 @@ then
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
     apt-get update
+    apt-get -qy upgrade
     apt-get -qy install \
                     git \
                     cmake \
