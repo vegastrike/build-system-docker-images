@@ -17,6 +17,7 @@ jobs:
           - FROM:     'debian:buster'
           - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
+          - FROM:     'fedora:34'
           - FROM:     'fedora:33'
           - FROM:     'fedora:32'
           # - FROM:     'centos:8'
