@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2021-06-11 ---"
+echo "--- bootstrap | 2021-07-27 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -215,6 +215,25 @@ then
                             git \
                             rpm-build \
                             clang
+elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 34 ] && [ $LINUX_VERSION_ID -lt 35 ])
+then
+    dnf install -y \
+                        git \
+                        cmake \
+                        boost-devel \
+                        freeglut-devel \
+                        gcc-c++ \
+                        openal-soft-devel \
+                        SDL-devel \
+                        libvorbis-devel \
+                        libjpeg-turbo-devel \
+                        libpng-devel \
+                        expat-devel \
+                        gtk3-devel \
+                        python3-devel \
+                        rpm-build \
+                        make \
+                        clang
 elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 32 ] && [ $LINUX_VERSION_ID -lt 34 ])
 then
     dnf install -y \
