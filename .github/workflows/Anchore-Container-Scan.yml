@@ -35,7 +35,6 @@ jobs:
           - FROM:     'fedora:33'
           - FROM:     'fedora:32'
           - FROM:     'rockylinux/rockylinux'
-          # - FROM:     'centos:8'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

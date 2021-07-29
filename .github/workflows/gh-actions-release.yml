@@ -32,7 +32,6 @@ jobs:
           - FROM:     'fedora:33'
           - FROM:     'fedora:32'
           - FROM:     'rockylinux/rockylinux'
-          # - FROM:     'centos:8'
 
     steps:
     - name: Checkout repository
