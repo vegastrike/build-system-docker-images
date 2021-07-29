@@ -451,7 +451,7 @@ then
     dnf -y install epel-release
     dnf config-manager --enable epel
     dnf config-manager --set-enabled powertools
-    dnf update
+    dnf -y update
     dnf -y install \
                         git \
                         cmake \
