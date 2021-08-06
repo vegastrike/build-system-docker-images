@@ -306,7 +306,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 15 ] || [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 2 ])
+elif [ $LINUX_ID == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 15 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 2 ])
 then
     zypper --non-interactive install -y \
                             libboost_log1_66_0-devel \
