@@ -82,7 +82,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -112,7 +111,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -204,7 +202,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -236,7 +233,6 @@ then
                     git \
                     cmake \
                     build-essential \
-                    python-dev \
                     libgl1-mesa-glx \
                     freeglut3-dev \
                     libopenal-dev \
@@ -259,7 +255,6 @@ then
                     git \
                     cmake \
                     build-essential \
-                    python-dev \
                     libgl1-mesa-glx \
                     freeglut3-dev \
                     libopenal-dev \
@@ -282,7 +277,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -332,7 +326,6 @@ then
                             libexpat-devel \
                             libgtk-3-0 \
                             gtk3-devel \
-                            python-devel \
                             python3-devel \
                             git \
                             rpm-build \
