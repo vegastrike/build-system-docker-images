@@ -249,7 +249,8 @@ then
                     libboost-regex-dev \
                     libxmu-dev \
                     clang \
-                    lsb-release
+                    lsb-release \
+                    snapd
     snap install cmake --classic
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
