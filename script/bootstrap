@@ -234,7 +234,6 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
-                    cmake \
                     build-essential \
                     python-dev \
                     libgl1-mesa-glx \
@@ -251,6 +250,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
+    snap install cmake --classic
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
     apt-get update
