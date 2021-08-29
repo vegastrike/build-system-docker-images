@@ -234,6 +234,7 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
+                    cmake \
                     build-essential \
                     python-dev \
                     libgl1-mesa-glx \
@@ -249,10 +250,7 @@ then
                     libboost-regex-dev \
                     libxmu-dev \
                     clang \
-                    lsb-release \
-                    snapd
-    service snapd.service start
-    snap install cmake --classic
+                    lsb-release
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
     apt-get update
