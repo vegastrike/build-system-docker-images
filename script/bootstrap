@@ -251,7 +251,7 @@ then
                     clang \
                     lsb-release \
                     snapd
-    service snapd start
+    service snapd.service start
     snap install cmake --classic
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
