@@ -310,7 +310,6 @@ elif [ $LINUX_ID == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 
 then
     zypper --non-interactive install -y \
                             libboost_log1_66_0-devel \
-                            libboost_python-py2_7-1_66_0-devel \
                             libboost_python-py3-1_66_0-devel \
                             libboost_system1_66_0-devel \
                             libboost_filesystem1_66_0-devel \
@@ -383,7 +382,6 @@ then
                         git \
                         cmake \
                         boost-devel \
-                        boost-python2-devel \
                         boost-python3-devel \
                         freeglut-devel \
                         gcc-c++ \
@@ -394,7 +392,6 @@ then
                         libpng-devel \
                         expat-devel \
                         gtk3-devel \
-                        python2-devel \
                         python3-devel \
                         rpm-build \
                         make \
