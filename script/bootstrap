@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2021-08-01 ---"
+echo "--- bootstrap | 2021-08-29 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -99,9 +99,9 @@ then
                     libsdl1.2-dev \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
@@ -222,9 +222,9 @@ then
                     libopengl0 \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
@@ -300,9 +300,9 @@ then
                     libopengl0 \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
