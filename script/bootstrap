@@ -231,7 +231,6 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
-                    cmake \
                     build-essential \
                     libgl1-mesa-glx \
                     freeglut3-dev \
@@ -246,7 +245,9 @@ then
                     libboost-regex-dev \
                     libxmu-dev \
                     clang \
-                    lsb-release
+                    lsb-release \
+                    python3-pip
+    pip3 install --upgrade-strategy eager cmake
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
     apt-get update
