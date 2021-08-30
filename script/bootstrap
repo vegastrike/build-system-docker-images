@@ -435,7 +435,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "rocky" ] && [ $LINUX_VERSION_ID == "8.4" ]
+elif [ $LINUX_ID == "rocky" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 8 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 4 ])
 then
     dnf -y install dnf-plugins-core
     dnf -y install epel-release
