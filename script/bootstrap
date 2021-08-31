@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #====================================
 # @file   : bootstrap
 # @brief  : installs dependencies for building Vega Strike
 # @usage  : sudo script/bootstrap
 # @param  : none
 #====================================
-# Copyright (C) 2020-2021 Stephen G. Tuggy <sgt@stephengtuggy.com>
+# Copyright (C) 2020-2021 Stephen G. Tuggy
 #
 # This file is part of Vega Strike.
 #
@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2021-08-01 ---"
+echo "--- bootstrap | 2021-08-29 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -82,7 +82,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -99,9 +98,9 @@ then
                     libsdl1.2-dev \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
@@ -112,7 +111,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -204,7 +202,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -222,9 +219,9 @@ then
                     libopengl0 \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
@@ -234,9 +231,7 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
-                    cmake \
                     build-essential \
-                    python-dev \
                     libgl1-mesa-glx \
                     freeglut3-dev \
                     libopenal-dev \
@@ -250,7 +245,9 @@ then
                     libboost-regex-dev \
                     libxmu-dev \
                     clang \
-                    lsb-release
+                    lsb-release \
+                    python3-pip
+    pip3 install --upgrade-strategy eager cmake
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
 then
     apt-get update
@@ -259,7 +256,6 @@ then
                     git \
                     cmake \
                     build-essential \
-                    python-dev \
                     libgl1-mesa-glx \
                     freeglut3-dev \
                     libopenal-dev \
@@ -282,7 +278,6 @@ then
     apt-get -qy install \
                     git \
                     cmake \
-                    python-dev \
                     build-essential \
                     automake \
                     autoconf \
@@ -300,9 +295,9 @@ then
                     libopengl0 \
                     libpostproc-dev \
                     freeglut3-dev \
-                    libboost-python1.67-dev \
-                    libboost-log1.67-dev \
-                    libboost-regex1.67-dev \
+                    libboost-python-dev \
+                    libboost-log-dev \
+                    libboost-regex-dev \
                     libxmu-dev \
                     clang \
                     lsb-release
@@ -310,7 +305,6 @@ elif [ $LINUX_ID == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 
 then
     zypper --non-interactive install -y \
                             libboost_log1_66_0-devel \
-                            libboost_python-py2_7-1_66_0-devel \
                             libboost_python-py3-1_66_0-devel \
                             libboost_system1_66_0-devel \
                             libboost_filesystem1_66_0-devel \
@@ -333,7 +327,6 @@ then
                             libexpat-devel \
                             libgtk-3-0 \
                             gtk3-devel \
-                            python-devel \
                             python3-devel \
                             git \
                             rpm-build \
@@ -383,7 +376,6 @@ then
                         git \
                         cmake \
                         boost-devel \
-                        boost-python2-devel \
                         boost-python3-devel \
                         freeglut-devel \
                         gcc-c++ \
@@ -394,7 +386,6 @@ then
                         libpng-devel \
                         expat-devel \
                         gtk3-devel \
-                        python2-devel \
                         python3-devel \
                         rpm-build \
                         make \
@@ -445,7 +436,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "rocky" ] && [ $LINUX_VERSION_ID == "8.4" ]
+elif [ $LINUX_ID == "rocky" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 8 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 4 ])
 then
     dnf -y install dnf-plugins-core
     dnf -y install epel-release

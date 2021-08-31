@@ -1,12 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #====================================
 # @file   : cibuild
-# @brief  : Builds the docker images
-#           in the context of CI/CD (Travis)
+# @brief  : Builds the docker images in the context of CI/CD (GitHub Actions)
 # @usage  : script/cibuild
 # @param  : none
 #====================================
-# Copyright (C) 2020 Stephen G. Tuggy <sgt@stephengtuggy.com>
+# Copyright (C) 2020-2021 Stephen G. Tuggy
 #
 # This file is part of Vega Strike.
 #
