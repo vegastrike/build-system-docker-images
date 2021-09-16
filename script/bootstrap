@@ -110,7 +110,6 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
-                    cmake \
                     build-essential \
                     automake \
                     autoconf \
@@ -132,7 +131,9 @@ then
                     libboost-regex-dev \
                     libxmu-dev \
                     clang \
-                    lsb-release
+                    lsb-release \
+                    python3-pip
+    pip3 install --upgrade-strategy eager cmake
 elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "hirsute" ]
 then
     apt-get update
@@ -254,7 +255,6 @@ then
     apt-get -qy upgrade
     apt-get -qy install \
                     git \
-                    cmake \
                     build-essential \
                     libglvnd-dev \
                     freeglut3-dev \
@@ -270,7 +270,9 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release \
-                    python3-dev
+                    python3-dev \
+                    python3-pip
+    pip3 install --upgrade-strategy eager cmake
 elif [ $LINUX_ID == "linuxmint" ] && [ $LINUX_CODENAME == "ulyana" ]
 then
     apt-get update
