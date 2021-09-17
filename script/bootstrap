@@ -66,6 +66,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libpostproc-dev \
                     freeglut3-dev \
@@ -95,6 +96,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libpostproc-dev \
                     freeglut3-dev \
@@ -155,6 +157,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libopengl0 \
                     libpostproc-dev \
@@ -186,6 +189,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libopengl0 \
                     libpostproc-dev \
@@ -216,6 +220,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libopengl0 \
                     libpostproc-dev \
@@ -234,6 +239,7 @@ then
                     git \
                     build-essential \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     freeglut3-dev \
                     libopenal-dev \
                     libsdl-gfx1.2-dev \
@@ -293,6 +299,7 @@ then
                     libogg-dev \
                     libvorbis-dev \
                     libglvnd-dev \
+                    libgl1-mesa-dev \
                     libsdl1.2-dev \
                     libopengl0 \
                     libpostproc-dev \
