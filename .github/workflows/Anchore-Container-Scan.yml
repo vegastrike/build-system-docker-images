@@ -1,6 +1,6 @@
 name: Anchore-Container-Scan
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -25,11 +25,11 @@ jobs:
           - FROM:     'ubuntu:groovy'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
-          - FROM:     'ubuntu:xenial'
+        #   - FROM:     'ubuntu:xenial'
           - FROM:     'linuxmintd/mint20-amd64'
           - FROM:     'debian:bullseye'
           - FROM:     'debian:buster'
-          - FROM:     'debian:stretch'
+        #   - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
           - FROM:     'fedora:34'
           - FROM:     'fedora:33'
@@ -43,7 +43,7 @@ jobs:
         with:
           fetch-depth: 2
           submodules: false
-        
+
       # - name: Run CI
       #   env:
       #     FROM:       ${{ matrix.FROM }}
