@@ -150,7 +150,7 @@ then
                     libpng16-16 \
                     libpng-dev \
                     libpng-tools \
-                    libjpeg62-dev \
+                    libjpeg-turbo8-dev \
                     libexpat1-dev \
                     libgdk-pixbuf-2.0-dev \
                     libgtk-3-dev \
