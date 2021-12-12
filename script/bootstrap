@@ -329,6 +329,7 @@ then
                             libSDL-1_2-0 \
                             libSDL-devel \
                             libvorbis-devel \
+                            libglvnd-devel \
                             libjpeg-turbo \
                             libjpeg62-devel \
                             libpng16-devel \
@@ -340,7 +341,7 @@ then
                             git \
                             rpm-build \
                             clang
-elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 34 ] && [ $LINUX_VERSION_ID -lt 35 ])
+elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 34 ] && [ $LINUX_VERSION_ID -lt 36 ])
 then
     dnf install -y \
                         git \
@@ -351,6 +352,7 @@ then
                         openal-soft-devel \
                         SDL-devel \
                         libvorbis-devel \
+                        libglvnd-devel \
                         libjpeg-turbo-devel \
                         libpng-devel \
                         expat-devel \
@@ -437,6 +439,7 @@ then
                         openal-soft-devel \
                         SDL-devel \
                         libvorbis-devel \
+                        libglvnd-devel \
                         libjpeg-turbo-devel \
                         libpng-devel \
                         expat-devel \
@@ -462,6 +465,7 @@ then
                         openal-soft-devel \
                         SDL-devel \
                         libvorbis-devel \
+                        libglvnd-devel \
                         libjpeg-turbo-devel \
                         libpng-devel \
                         expat-devel \
