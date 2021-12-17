@@ -21,8 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - FROM:     'ubuntu:impish'
           - FROM:     'ubuntu:hirsute'
-          - FROM:     'ubuntu:groovy'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
           - FROM:     'ubuntu:xenial'
@@ -31,9 +31,8 @@ jobs:
           - FROM:     'debian:buster'
           - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
+          - FROM:     'fedora:35'
           - FROM:     'fedora:34'
-          - FROM:     'fedora:33'
-          - FROM:     'fedora:32'
           - FROM:     'rockylinux/rockylinux'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
