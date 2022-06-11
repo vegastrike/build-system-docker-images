@@ -36,6 +36,7 @@ jobs:
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
+          - FROM:     'manjarolinux/base'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
