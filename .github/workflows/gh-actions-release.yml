@@ -18,6 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - FROM:     'ubuntu:jammy'
           - FROM:     'ubuntu:impish'
           - FROM:     'ubuntu:hirsute'
           - FROM:     'ubuntu:focal'
@@ -28,9 +29,11 @@ jobs:
           - FROM:     'debian:buster'
           - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
+          - FROM:     'fedora:36'
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
+          - FROM:     'manjarolinux/base'
 
     steps:
     - name: Checkout repository
