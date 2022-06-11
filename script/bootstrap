@@ -573,7 +573,7 @@ then
                         clang
 elif [ "$LINUX_ID" == "manjaro" ]
 then
-    pacman -S      cmake \
+    pacman -S --refresh --noconfirm cmake \
                    boost \
                    clang \
                    gcc \
