@@ -5,7 +5,7 @@
 # @usage  : sudo script/bootstrap
 # @param  : none
 #====================================
-# Copyright (C) 2020-2021 Stephen G. Tuggy
+# Copyright (C) 2020-2022 Stephen G. Tuggy
 #
 # This file is part of Vega Strike.
 #
@@ -25,7 +25,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2021-12-12 ---"
+echo "--- bootstrap | 2022-06-11 ---"
 echo "------------------------------"
 
 if [ -f /etc/os-release ]
@@ -45,7 +45,7 @@ echo "LINUX_CODENAME = ${LINUX_CODENAME}"
 export LINUX_VERSION_ID=$(cat $OS_RELEASE_LOCATION | grep ^VERSION_ID= | sed 's/^VERSION_ID=//' | tr -d '"\n')
 echo "LINUX_VERSION_ID = ${LINUX_VERSION_ID}"
 
-if [ $LINUX_ID == "debian" ] && [ $LINUX_CODENAME == "bullseye" ]
+if [ "$LINUX_ID" == "debian" ] && [ "$LINUX_CODENAME" == "bullseye" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -76,7 +76,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "debian" ] && [ $LINUX_CODENAME == "buster" ]
+elif [ "$LINUX_ID" == "debian" ] && [ "$LINUX_CODENAME" == "buster" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -106,7 +106,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "debian" ] && [ $LINUX_CODENAME == "stretch" ]
+elif [ "$LINUX_ID" == "debian" ] && [ "$LINUX_CODENAME" == "stretch" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -136,7 +136,7 @@ then
                     lsb-release \
                     python3-pip
     pip3 install --upgrade-strategy eager cmake
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "impish" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "impish" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -169,7 +169,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "hirsute" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "hirsute" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -201,7 +201,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "groovy" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "groovy" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -233,7 +233,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "focal" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "focal" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -264,7 +264,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "bionic" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "bionic" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -288,7 +288,7 @@ then
                     lsb-release \
                     python3-pip
     pip3 install --upgrade-strategy eager cmake
-elif [ $LINUX_ID == "ubuntu" ] && [ $LINUX_CODENAME == "xenial" ]
+elif [ "$LINUX_ID" == "ubuntu" ] && [ "$LINUX_CODENAME" == "xenial" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -312,7 +312,7 @@ then
                     python3-dev \
                     python3-pip
     pip3 install cmake
-elif [ $LINUX_ID == "linuxmint" ] && [ $LINUX_CODENAME == "ulyana" ]
+elif [ "$LINUX_ID" == "linuxmint" ] && [ "$LINUX_CODENAME" == "ulyana" ]
 then
     apt-get update
     apt-get -qy upgrade
@@ -343,7 +343,7 @@ then
                     libxmu-dev \
                     clang \
                     lsb-release
-elif [ $LINUX_ID == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 15 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 2 ])
+elif [ "$LINUX_ID" == "opensuse-leap" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 15 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 2 ])
 then
     zypper --non-interactive install -y \
                             libboost_log1_66_0-devel \
@@ -374,7 +374,7 @@ then
                             git \
                             rpm-build \
                             clang
-elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 34 ] && [ $LINUX_VERSION_ID -lt 36 ])
+elif [ "$LINUX_ID" == "fedora" ] && ([ $LINUX_VERSION_ID -ge 34 ] && [ $LINUX_VERSION_ID -lt 36 ])
 then
     dnf install -y \
                         git \
@@ -394,7 +394,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 32 ] && [ $LINUX_VERSION_ID -lt 34 ])
+elif [ "$LINUX_ID" == "fedora" ] && ([ $LINUX_VERSION_ID -ge 32 ] && [ $LINUX_VERSION_ID -lt 34 ])
 then
     dnf install -y \
                         git \
@@ -414,7 +414,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "fedora" ] && ([ $LINUX_VERSION_ID -ge 30 ] && [ $LINUX_VERSION_ID -lt 32 ])
+elif [ "$LINUX_ID" == "fedora" ] && ([ $LINUX_VERSION_ID -ge 30 ] && [ $LINUX_VERSION_ID -lt 32 ])
 then
     dnf install -y \
                         git \
@@ -434,7 +434,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "centos" ] && [ $LINUX_VERSION_ID -eq 8 ]
+elif [ "$LINUX_ID" == "centos" ] && [ $LINUX_VERSION_ID -eq 8 ]
 then
     dnf -y install dnf-plugins-core
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -457,7 +457,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif ([ $LINUX_ID == "rhel" ] || [ $LINUX_ID == "redhat" ]) && [ $LINUX_VERSION_ID -eq 8 ]
+elif ([ "$LINUX_ID" == "rhel" ] || [ "$LINUX_ID" == "redhat" ]) && [ $LINUX_VERSION_ID -eq 8 ]
 then
     dnf -y install dnf-plugins-core
     dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -481,7 +481,7 @@ then
                         rpm-build \
                         make \
                         clang
-elif [ $LINUX_ID == "rocky" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 8 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 4 ])
+elif [ "$LINUX_ID" == "rocky" ] && ([ $(echo ${LINUX_VERSION_ID} | cut -f 1 -d '.') -eq 8 ] && [ $(echo ${LINUX_VERSION_ID} | cut -f 2 -d '.') -ge 4 ])
 then
     dnf -y install dnf-plugins-core
     dnf -y install epel-release
