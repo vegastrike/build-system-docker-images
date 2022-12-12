@@ -41,11 +41,9 @@ jobs:
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
-          - FROM:     'rockylinux:9.1'
           - FROM:     'rockylinux:9.0'
           - FROM:     'rockylinux:8.6'
           - FROM:     'rockylinux:8.5'
-          - FROM:     'rockylinux:8.4'
           - FROM:     'manjarolinux/base'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
