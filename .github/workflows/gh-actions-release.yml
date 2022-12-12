@@ -19,8 +19,6 @@ jobs:
       matrix:
         include:
           - FROM:     'ubuntu:jammy'
-          - FROM:     'ubuntu:impish'
-          - FROM:     'ubuntu:hirsute'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
           - FROM:     'linuxmintd/mint21-amd64'
