@@ -19,33 +19,34 @@ jobs:
       matrix:
         include:
           - FROM:     'ubuntu:jammy'
-          - FROM:     'ubuntu:impish'
-          - FROM:     'ubuntu:hirsute'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
-          - FROM:     'ubuntu:xenial'
+          - FROM:     'linuxmintd/mint21-amd64'
           - FROM:     'linuxmintd/mint20-amd64'
+          - FROM:     'debian:bookworm'
           - FROM:     'debian:bullseye'
           - FROM:     'debian:buster'
           - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
+          - FROM:     'opensuse/leap:15.4'
+          - FROM:     'opensuse/leap:15.3'
+          - FROM:     'opensuse/leap:15.2'
+          - FROM:     'fedora:37'
           - FROM:     'fedora:36'
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
+          - FROM:     'rockylinux:9.0'
+          - FROM:     'rockylinux:8.6'
+          - FROM:     'rockylinux:8.5'
           - FROM:     'manjarolinux/base'
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        # We must fetch at least the immediate parents so that if this is
-        # a pull request then we can checkout the head.
         fetch-depth: 2
         submodules: false
-
-    # where in a pull request we want to move to the head of the PR and not be at the
-    # merge commit; here we want to be at the HEAD of the ref
 
     - name: Extract tag name etc
       shell: bash

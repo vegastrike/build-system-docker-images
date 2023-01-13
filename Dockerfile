@@ -1,6 +1,6 @@
 # Dockerfile
 #
-# Copyright (C) 2020 Stephen G. Tuggy <sgt@stephengtuggy.com>
+# Copyright (C) 2020-2022 Stephen G. Tuggy and other Vega Strike contributors
 #
 # This file is part of Vega Strike.
 #
@@ -24,4 +24,4 @@ WORKDIR /usr/src/build-system-docker-images
 
 COPY script/ script/
 
-RUN DEBIAN_FRONTEND=noninteractive script/bootstrap
+RUN DEBIAN_FRONTEND=noninteractive script/bootstrap 1
