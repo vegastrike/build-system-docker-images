@@ -58,7 +58,7 @@ jobs:
         echo "${TAG_NAME}"
 
     - name: Docker Login
-      uses: docker/login-action@v1
+      uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a #v2.1.0
       with:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_KEY }}
