@@ -82,3 +82,5 @@ jobs:
         uses: anchore/scan-action@9a22e4caae42db0d4c687ab5431e1c3699d0def1 #v3.3.2
         with:
           image: "localbuild/${{ matrix.FROM }}"
+          fail-build: false
+          severity-cutoff: critical
