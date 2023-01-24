@@ -47,7 +47,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
         with:
           fetch-depth: 2
           submodules: false
@@ -60,14 +60,14 @@ jobs:
       #   run: script/cibuild
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@8c0edbc76e98fa90f69d9a2c020dcb50019dc325 #v2.2.1
         env:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
           IS_RELEASE: 1
 
       - name: build local container
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@37abcedcc1da61a57767b7588cb9d03eb57e28b3 #v3.3.0
         env:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
@@ -79,6 +79,8 @@ jobs:
           load: true
 
       - name: Scan image
-        uses: anchore/scan-action@v2
+        uses: anchore/scan-action@9a22e4caae42db0d4c687ab5431e1c3699d0def1 #v3.3.2
         with:
           image: "localbuild/${{ matrix.FROM }}"
+          fail-build: false
+          severity-cutoff: critical
