@@ -24,6 +24,7 @@ jobs:
           - FROM:     'ubuntu:jammy'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
+          - FROM:     'linuxmintd/mint21.1-amd64'
           - FROM:     'linuxmintd/mint21-amd64'
           - FROM:     'linuxmintd/mint20-amd64'
           - FROM:     'debian:bookworm'
@@ -43,6 +44,7 @@ jobs:
           - FROM:     'rockylinux:8.6'
           - FROM:     'rockylinux:8.5'
           - FROM:     'manjarolinux/base'
+          - FROM:     'funtoo/stage3-generic_64'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
