@@ -21,6 +21,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - FROM:     'ubuntu:kinetic'
           - FROM:     'ubuntu:jammy'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
@@ -40,7 +41,9 @@ jobs:
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
+          - FROM:     'rockylinux:9.1'
           - FROM:     'rockylinux:9.0'
+          - FROM:     'rockylinux:8.7'
           - FROM:     'rockylinux:8.6'
           - FROM:     'rockylinux:8.5'
           - FROM:     'manjarolinux/base'
@@ -49,7 +52,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 #v3.5.0
         with:
           fetch-depth: 2
           submodules: false
