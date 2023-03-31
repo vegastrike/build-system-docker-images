@@ -86,6 +86,7 @@ function bootstrapOnDebian()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -115,6 +116,7 @@ function bootstrapOnDebian()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -142,6 +144,7 @@ function bootstrapOnDebian()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -172,6 +175,7 @@ function bootstrapOnDebian()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release \
@@ -223,6 +227,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -254,6 +259,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -284,6 +290,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -314,6 +321,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -343,6 +351,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -363,6 +372,7 @@ function bootstrapOnUbuntu()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release \
@@ -418,6 +428,7 @@ function bootstrapOnPopOS ()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -466,6 +477,7 @@ function bootstrapOnLinuxMint ()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -497,6 +509,7 @@ function bootstrapOnLinuxMint ()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -526,6 +539,7 @@ function bootstrapOnLinuxMint ()
                       libboost-python-dev \
                       libboost-log-dev \
                       libboost-regex-dev \
+                      libboost-program-options-dev \
                       libxmu-dev \
                       clang \
                       lsb-release
@@ -550,6 +564,7 @@ function bootstrapOnOpenSuseLeap ()
                               libboost_regex1_66_0-devel \
                               libboost_chrono1_66_0-devel \
                               libboost_atomic1_66_0-devel \
+                              libboost_program_options1_66_0-devel \
                               cmake \
                               gcc-c++ \
                               freeglut-devel \
@@ -581,6 +596,7 @@ function bootstrapOnOpenSuseLeap ()
                               libboost_regex1_66_0-devel \
                               libboost_chrono1_66_0-devel \
                               libboost_atomic1_66_0-devel \
+                              libboost_program_options1_66_0-devel \
                               cmake \
                               gcc-c++ \
                               freeglut-devel \
@@ -612,6 +628,7 @@ function bootstrapOnOpenSuseLeap ()
                               libboost_regex1_75_0-devel \
                               libboost_chrono1_75_0-devel \
                               libboost_atomic1_75_0-devel \
+                              libboost_program_options1_75_0-devel \
                               cmake \
                               gcc-c++ \
                               freeglut-devel \
