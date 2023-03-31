@@ -21,6 +21,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - FROM:     'ubuntu:kinetic'
           - FROM:     'ubuntu:jammy'
           - FROM:     'ubuntu:focal'
           - FROM:     'ubuntu:bionic'
