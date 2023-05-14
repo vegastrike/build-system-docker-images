@@ -29,7 +29,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2023-03-05 ---"
+echo "--- bootstrap | 2023-05-14 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
