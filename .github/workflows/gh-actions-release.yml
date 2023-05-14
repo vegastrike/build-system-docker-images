@@ -28,7 +28,6 @@ jobs:
           - FROM:     'debian:bookworm'
           - FROM:     'debian:bullseye'
           - FROM:     'debian:buster'
-          - FROM:     'debian:stretch'
           - FROM:     'opensuse/leap'
           - FROM:     'opensuse/leap:15.4'
           - FROM:     'opensuse/leap:15.3'
