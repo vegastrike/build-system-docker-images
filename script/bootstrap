@@ -317,6 +317,14 @@ function bootstrapOnUbuntu()
       python3 -m pip install --upgrade-strategy eager --upgrade pip
       python3 -m pip install --upgrade-strategy eager cmake
       ;;
+    "impish")
+      echo "Sorry, Ubuntu impish is no longer supported"
+      exit 2
+      ;;
+    "hirsute")
+      echo "Sorry, Ubuntu hirsute is no longer supported"
+      exit 2
+      ;;
     "xenial")
       echo "Sorry, Ubuntu xenial is no longer supported"
       exit 2
