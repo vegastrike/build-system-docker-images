@@ -601,6 +601,38 @@ function bootstrapOnOpenSuseLeap ()
                               rpm-build \
                               clang
       ;;
+    "15.5")
+      zypper --non-interactive install -y \
+                              libboost_log1_75_0-devel \
+                              libboost_python-py3-1_75_0-devel \
+                              libboost_system1_75_0-devel \
+                              libboost_filesystem1_75_0-devel \
+                              libboost_thread1_75_0-devel \
+                              libboost_regex1_75_0-devel \
+                              libboost_chrono1_75_0-devel \
+                              libboost_atomic1_75_0-devel \
+                              libboost_program_options1_75_0-devel \
+                              cmake \
+                              gcc-c++ \
+                              freeglut-devel \
+                              libopenal0 \
+                              openal-soft-devel \
+                              libSDL-1_2-0 \
+                              libSDL-devel \
+                              libvorbis-devel \
+                              libglvnd-devel \
+                              libjpeg-turbo \
+                              libjpeg62-devel \
+                              libpng16-devel \
+                              expat \
+                              libexpat-devel \
+                              libgtk-3-0 \
+                              gtk3-devel \
+                              python3-devel \
+                              git \
+                              rpm-build \
+                              clang
+      ;;
     *)
       echo "Sorry, this version of openSUSE Leap is unsupported"
       exit 2
