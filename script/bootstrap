@@ -29,7 +29,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2023-05-14 ---"
+echo "--- bootstrap | 2023-07-08 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -771,6 +771,26 @@ function bootstrapOnFedora ()
                           make \
                           clang
       ;;
+    38)
+      dnf install -y \
+                          git \
+                          cmake \
+                          boost-devel \
+                          freeglut-devel \
+                          gcc-c++ \
+                          openal-soft-devel \
+                          sdl12-compat-devel \
+                          libvorbis-devel \
+                          libglvnd-devel \
+                          libjpeg-turbo-devel \
+                          libpng-devel \
+                          expat-devel \
+                          gtk3-devel \
+                          python3-devel \
+                          rpm-build \
+                          make \
+                          clang
+      ;;
     *)
       echo "Sorry, this version of Fedora is unsupported"
       exit 2
@@ -1378,7 +1398,7 @@ function bootstrapOnManjaro ()
 function bootstrapOnFuntoo ()
 {
   ego sync
-  emerge openal
+  emerge llvm clang openal # libglvnd
 }
 
 case "${LINUX_ID}" in
