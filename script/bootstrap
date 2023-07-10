@@ -29,7 +29,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2023-07-08 ---"
+echo "--- bootstrap | 2023-07-09 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -1462,7 +1462,7 @@ function bootstrapOnManjaro ()
 function bootstrapOnFuntoo ()
 {
   ego sync
-  emerge llvm clang openal # libglvnd
+  emerge llvm clang openal libglvnd
 }
 
 case "${LINUX_ID}" in
