@@ -29,7 +29,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2023-05-14 ---"
+echo "--- bootstrap | 2023-07-09 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -174,6 +174,38 @@ function bootstrapOnUbuntu()
   fi
 
   case "$LINUX_CODENAME" in
+    "lunar")
+      apt-get -qy install \
+                      git \
+                      cmake \
+                      python3-dev \
+                      build-essential \
+                      automake \
+                      autoconf \
+                      libpng16-16 \
+                      libpng-dev \
+                      libpng-tools \
+                      libjpeg-turbo8-dev \
+                      libexpat1-dev \
+                      libgdk-pixbuf-2.0-dev \
+                      libgtk-3-dev \
+                      libopenal-dev \
+                      libogg-dev \
+                      libvorbis-dev \
+                      libglvnd-dev \
+                      libgl1-mesa-dev \
+                      libsdl1.2-dev \
+                      libopengl0 \
+                      libpostproc-dev \
+                      freeglut3-dev \
+                      libboost-python-dev \
+                      libboost-log-dev \
+                      libboost-regex-dev \
+                      libboost-program-options-dev \
+                      libxmu-dev \
+                      clang \
+                      lsb-release
+      ;;
     "kinetic")
       apt-get -qy install \
                       git \
@@ -601,6 +633,38 @@ function bootstrapOnOpenSuseLeap ()
                               rpm-build \
                               clang
       ;;
+    "15.5")
+      zypper --non-interactive install -y \
+                              libboost_log1_75_0-devel \
+                              libboost_python-py3-1_75_0-devel \
+                              libboost_system1_75_0-devel \
+                              libboost_filesystem1_75_0-devel \
+                              libboost_thread1_75_0-devel \
+                              libboost_regex1_75_0-devel \
+                              libboost_chrono1_75_0-devel \
+                              libboost_atomic1_75_0-devel \
+                              libboost_program_options1_75_0-devel \
+                              cmake \
+                              gcc-c++ \
+                              freeglut-devel \
+                              libopenal0 \
+                              openal-soft-devel \
+                              libSDL-1_2-0 \
+                              libSDL-devel \
+                              libvorbis-devel \
+                              libglvnd-devel \
+                              libjpeg-turbo \
+                              libjpeg62-devel \
+                              libpng16-devel \
+                              expat \
+                              libexpat-devel \
+                              libgtk-3-0 \
+                              gtk3-devel \
+                              python3-devel \
+                              git \
+                              rpm-build \
+                              clang
+      ;;
     *)
       echo "Sorry, this version of openSUSE Leap is unsupported"
       exit 2
@@ -752,6 +816,26 @@ function bootstrapOnFedora ()
                           clang
       ;;
     37)
+      dnf install -y \
+                          git \
+                          cmake \
+                          boost-devel \
+                          freeglut-devel \
+                          gcc-c++ \
+                          openal-soft-devel \
+                          sdl12-compat-devel \
+                          libvorbis-devel \
+                          libglvnd-devel \
+                          libjpeg-turbo-devel \
+                          libpng-devel \
+                          expat-devel \
+                          gtk3-devel \
+                          python3-devel \
+                          rpm-build \
+                          make \
+                          clang
+      ;;
+    38)
       dnf install -y \
                           git \
                           cmake \
@@ -1378,7 +1462,7 @@ function bootstrapOnManjaro ()
 function bootstrapOnFuntoo ()
 {
   ego sync
-  emerge openal
+  emerge llvm clang openal libglvnd
 }
 
 case "${LINUX_ID}" in
