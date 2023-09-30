@@ -17,35 +17,38 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - FROM:     'ubuntu:jammy'
-          - FROM:     'ubuntu:focal'
-          - FROM:     'ubuntu:bionic'
-          - FROM:     'linuxmintd/mint21.1-amd64'
-          - FROM:     'linuxmintd/mint21-amd64'
-          - FROM:     'linuxmintd/mint20-amd64'
-          - FROM:     'debian:bookworm'
-          - FROM:     'debian:bullseye'
-          - FROM:     'debian:buster'
-          - FROM:     'debian:stretch'
-          - FROM:     'opensuse/leap'
-          - FROM:     'opensuse/leap:15.4'
-          - FROM:     'opensuse/leap:15.3'
-          - FROM:     'opensuse/leap:15.2'
-          - FROM:     'fedora:37'
-          - FROM:     'fedora:36'
-          - FROM:     'fedora:35'
-          - FROM:     'fedora:34'
-          - FROM:     'rockylinux/rockylinux'
-          - FROM:     'rockylinux:9.0'
-          - FROM:     'rockylinux:8.6'
-          - FROM:     'rockylinux:8.5'
-          - FROM:     'manjarolinux/base'
-          - FROM:     'funtoo/stage3-generic_64'
+        FROM:
+          - 'ubuntu:lunar'
+          - 'ubuntu:kinetic'
+          - 'ubuntu:jammy'
+          - 'ubuntu:focal'
+          - 'ubuntu:bionic'
+          - 'linuxmintd/mint21.1-amd64'
+          - 'linuxmintd/mint21-amd64'
+          - 'linuxmintd/mint20-amd64'
+          - 'debian:bookworm'
+          - 'debian:bullseye'
+          - 'debian:buster'
+          - 'opensuse/leap:15.5'
+          - 'opensuse/leap:15.4'
+          - 'opensuse/leap:15.3'
+          - 'opensuse/leap:15.2'
+          - 'fedora:38'
+          - 'fedora:37'
+          - 'fedora:36'
+          - 'fedora:35'
+          - 'fedora:34'
+          - 'rockylinux:9.1'
+          - 'rockylinux:9.0'
+          - 'rockylinux:8.7'
+          - 'rockylinux:8.6'
+          - 'rockylinux:8.5'
+          - 'manjarolinux/base'
+          - 'funtoo/stage3-generic_64'
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
+      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 #v3.5.3
       with:
         fetch-depth: 2
         submodules: false
@@ -60,7 +63,7 @@ jobs:
         echo "${TAG_NAME}"
 
     - name: Docker Login
-      uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a #v2.1.0
+      uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc #v2.2.0
       with:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_KEY }}
