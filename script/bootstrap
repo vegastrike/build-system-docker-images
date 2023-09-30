@@ -81,6 +81,7 @@ function bootstrapOnDebian()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libpostproc-dev \
                       freeglut3-dev \
                       libboost-python-dev \
@@ -111,6 +112,7 @@ function bootstrapOnDebian()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libpostproc-dev \
                       freeglut3-dev \
                       libboost-python-dev \
@@ -139,6 +141,7 @@ function bootstrapOnDebian()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libpostproc-dev \
                       freeglut3-dev \
                       libboost-python-dev \
@@ -195,38 +198,7 @@ function bootstrapOnUbuntu()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
-                      libopengl0 \
-                      libpostproc-dev \
-                      freeglut3-dev \
-                      libboost-python-dev \
-                      libboost-log-dev \
-                      libboost-regex-dev \
-                      libboost-program-options-dev \
-                      libxmu-dev \
-                      clang \
-                      lsb-release
-      ;;
-    "kinetic")
-      apt-get -qy install \
-                      git \
-                      cmake \
-                      python3-dev \
-                      build-essential \
-                      automake \
-                      autoconf \
-                      libpng16-16 \
-                      libpng-dev \
-                      libpng-tools \
-                      libjpeg-turbo8-dev \
-                      libexpat1-dev \
-                      libgdk-pixbuf-2.0-dev \
-                      libgtk-3-dev \
-                      libopenal-dev \
-                      libogg-dev \
-                      libvorbis-dev \
-                      libglvnd-dev \
-                      libgl1-mesa-dev \
-                      libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -259,6 +231,7 @@ function bootstrapOnUbuntu()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -290,6 +263,7 @@ function bootstrapOnUbuntu()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -320,6 +294,7 @@ function bootstrapOnUbuntu()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -340,6 +315,7 @@ function bootstrapOnUbuntu()
                       freeglut3-dev \
                       libopenal-dev \
                       libsdl-gfx1.2-dev \
+                      libsdl2-dev \
                       libvorbis-dev \
                       libjpeg-dev \
                       libpng-dev \
@@ -405,6 +381,7 @@ function bootstrapOnPopOS ()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -454,6 +431,7 @@ function bootstrapOnLinuxMint ()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-compat-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -486,6 +464,7 @@ function bootstrapOnLinuxMint ()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \
@@ -516,6 +495,7 @@ function bootstrapOnLinuxMint ()
                       libglvnd-dev \
                       libgl1-mesa-dev \
                       libsdl1.2-dev \
+                      libsdl2-dev \
                       libopengl0 \
                       libpostproc-dev \
                       freeglut3-dev \

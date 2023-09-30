@@ -12,7 +12,6 @@ jobs:
       matrix:
         FROM:
           - 'ubuntu:lunar'
-          - 'ubuntu:kinetic'
           - 'ubuntu:jammy'
           - 'ubuntu:focal'
           - 'ubuntu:bionic'
