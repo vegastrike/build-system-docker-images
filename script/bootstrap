@@ -1478,7 +1478,9 @@ function bootstrapOnManjaro ()
 function bootstrapOnFuntoo ()
 {
   ego sync
-  emerge \
+  # enable `autounmask-write` so that USE flags
+  # change in the image appropriately
+  emerge --autounmask-write \
         cmake \
         boost \
         llvm \
