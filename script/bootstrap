@@ -315,7 +315,7 @@ function bootstrapOnUbuntu()
                       freeglut3-dev \
                       libopenal-dev \
                       libsdl-gfx1.2-dev \
-                      libsdl2-dev \
+                      libsdl2-gfx-dev \
                       libvorbis-dev \
                       libjpeg-dev \
                       libpng-dev \
@@ -535,6 +535,7 @@ function bootstrapOnOpenSuseLeap ()
                               openal-soft-devel \
                               libSDL-1_2-0 \
                               libSDL-devel \
+                              libSDL2-devel \
                               libvorbis-devel \
                               libglvnd-devel \
                               libjpeg-turbo \
@@ -567,6 +568,7 @@ function bootstrapOnOpenSuseLeap ()
                               openal-soft-devel \
                               libSDL-1_2-0 \
                               libSDL-devel \
+                              libSDL2-devel \
                               libvorbis-devel \
                               libglvnd-devel \
                               libjpeg-turbo \
@@ -599,6 +601,7 @@ function bootstrapOnOpenSuseLeap ()
                               openal-soft-devel \
                               libSDL-1_2-0 \
                               libSDL-devel \
+                              libSDL2-devel \
                               libvorbis-devel \
                               libglvnd-devel \
                               libjpeg-turbo \
@@ -631,6 +634,7 @@ function bootstrapOnOpenSuseLeap ()
                               openal-soft-devel \
                               libSDL-1_2-0 \
                               libSDL-devel \
+                              libSDL2-devel \
                               libvorbis-devel \
                               libglvnd-devel \
                               libjpeg-turbo \
@@ -665,6 +669,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -685,6 +690,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -705,6 +711,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -725,6 +732,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -744,6 +752,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -764,6 +773,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -784,6 +794,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -804,6 +815,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -824,6 +836,7 @@ function bootstrapOnFedora ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -858,6 +871,7 @@ function bootstrapOnCentOS ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -881,6 +895,7 @@ function bootstrapOnCentOS ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libjpeg-turbo-devel \
                           libpng-devel \
@@ -914,6 +929,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -938,6 +954,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -962,6 +979,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -986,6 +1004,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1010,6 +1029,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1034,6 +1054,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1058,6 +1079,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1082,6 +1104,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1106,6 +1129,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1130,6 +1154,7 @@ function bootstrapOnRedHat ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1166,6 +1191,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1192,6 +1218,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1218,6 +1245,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1244,6 +1272,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1270,6 +1299,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1296,6 +1326,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1322,6 +1353,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1348,6 +1380,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           SDL-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1372,6 +1405,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1396,6 +1430,7 @@ function bootstrapOnRockyLinux ()
                           gcc-c++ \
                           openal-soft-devel \
                           sdl12-compat-devel \
+                          SDL2-devel \
                           libvorbis-devel \
                           libglvnd-devel \
                           libjpeg-turbo-devel \
@@ -1422,6 +1457,7 @@ function bootstrapOnManjaro ()
                    gcc \
                    gcc-libs \
                    sdl \
+                   sdl2 \
                    expat \
                    gtk3 \
                    libglvnd \
@@ -1442,7 +1478,31 @@ function bootstrapOnManjaro ()
 function bootstrapOnFuntoo ()
 {
   ego sync
-  emerge llvm clang openal libglvnd
+  # enable `autounmask-write` so that USE flags
+  # change in the image appropriately
+  emerge --autounmask-write \
+        cmake \
+        boost \
+        llvm \
+        clang \
+        gcc \
+        libsdl \
+        libsdl2 \
+        expat \
+        gtk3 \
+        libglvnd \
+        mesa \
+        python \
+        autoconf \
+        automake \
+        freeglut \
+        git \
+        libjpeg-turbo \
+        libpng \
+        libvorbis \
+        libXmu \
+        openal \
+        make
 }
 
 case "${LINUX_ID}" in
