@@ -1505,6 +1505,33 @@ function bootstrapOnFuntoo ()
         make
 }
 
+function bootstrapOnArch ()
+{
+  pacman -Sy --noconfirm \
+        cmake \
+        boost \
+        llvm \
+        clang \
+        gcc \
+        sdl \
+        sdl2 \
+        expat \
+        gtk3 \
+        libglvnd \
+        mesa \
+        python \
+        autoconf \
+        automake \
+        freeglut \
+        git \
+        libjpeg-turbo \
+        libpng \
+        libvorbis \
+        libxmu \
+        openal \
+        make
+}
+
 case "${LINUX_ID}" in
   "debian")
     bootstrapOnDebian
@@ -1541,6 +1568,9 @@ case "${LINUX_ID}" in
     ;;
   "funtoo")
     bootstrapOnFuntoo
+    ;;
+  "arch")
+    bootstrapOnArch
     ;;
   *)
     echo "Sorry, unrecognized/unsupported Linux distribution"
