@@ -1507,12 +1507,16 @@ function bootstrapOnFuntoo ()
 
 function bootstrapOnArch ()
 {
+  # NOTE: Arch requires GCC 12 right now
+  # also installing latest GCC.
   pacman -Sy --noconfirm \
+        base-devel \
         cmake \
         boost \
         llvm \
         clang \
         gcc \
+        gcc12 \
         sdl \
         sdl2 \
         expat \
@@ -1520,8 +1524,6 @@ function bootstrapOnArch ()
         libglvnd \
         mesa \
         python \
-        autoconf \
-        automake \
         freeglut \
         git \
         libjpeg-turbo \
