@@ -1505,6 +1505,35 @@ function bootstrapOnFuntoo ()
         make
 }
 
+function bootstrapOnArch ()
+{
+  # NOTE: Arch requires GCC 12 right now
+  # also installing latest GCC.
+  pacman -Sy --noconfirm \
+        base-devel \
+        cmake \
+        boost \
+        llvm \
+        clang \
+        gcc \
+        gcc12 \
+        sdl \
+        sdl2 \
+        expat \
+        gtk3 \
+        libglvnd \
+        mesa \
+        python \
+        freeglut \
+        git \
+        libjpeg-turbo \
+        libpng \
+        libvorbis \
+        libxmu \
+        openal \
+        make
+}
+
 case "${LINUX_ID}" in
   "debian")
     bootstrapOnDebian
@@ -1541,6 +1570,9 @@ case "${LINUX_ID}" in
     ;;
   "funtoo")
     bootstrapOnFuntoo
+    ;;
+  "arch")
+    bootstrapOnArch
     ;;
   *)
     echo "Sorry, unrecognized/unsupported Linux distribution"
