@@ -29,7 +29,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2023-07-09 ---"
+echo "--- bootstrap | 2023-11-24 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -177,6 +177,39 @@ function bootstrapOnUbuntu()
   fi
 
   case "$LINUX_CODENAME" in
+    "mantic")
+      apt-get -qy install \
+                      git \
+                      cmake \
+                      python3-dev \
+                      build-essential \
+                      automake \
+                      autoconf \
+                      libpng16-16 \
+                      libpng-dev \
+                      libpng-tools \
+                      libjpeg-turbo8-dev \
+                      libexpat1-dev \
+                      libgdk-pixbuf-2.0-dev \
+                      libgtk-3-dev \
+                      libopenal-dev \
+                      libogg-dev \
+                      libvorbis-dev \
+                      libglvnd-dev \
+                      libgl1-mesa-dev \
+                      libsdl1.2-dev \
+                      libsdl2-dev \
+                      libopengl0 \
+                      libpostproc-dev \
+                      freeglut3-dev \
+                      libboost-python-dev \
+                      libboost-log-dev \
+                      libboost-regex-dev \
+                      libboost-program-options-dev \
+                      libxmu-dev \
+                      clang \
+                      lsb-release
+      ;;
     "lunar")
       apt-get -qy install \
                       git \
