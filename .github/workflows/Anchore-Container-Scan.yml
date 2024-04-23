@@ -30,7 +30,7 @@ jobs:
           - 'linuxmintd/mint20-amd64'
           - 'debian:bookworm'
           - 'debian:bullseye'
-          - 'debian:buster'
+          #- 'debian:buster'        # buster-backports is no longer available from deb.debian.org. Sunsetting?
           - 'opensuse/leap:15.5'
           - 'opensuse/leap:15.4'
           - 'opensuse/leap:15.3'
@@ -70,7 +70,7 @@ jobs:
       #   run: script/cibuild
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@2a1a44ac4aa01993040736bd95bb470da1a38365 #v2.9.0
+        uses: docker/setup-buildx-action@d70bba72b1f3fd22344832f00baa16ece964efeb #v3.3.0
         env:
           FROM:       ${{ matrix.FROM }}
           MY_OS_NAME: linux
@@ -89,7 +89,7 @@ jobs:
           load: true
 
       - name: Scan image
-        uses: anchore/scan-action@24fd7c9060f3c96848dd1929fac8d796fb5ae4b4 #v3.3.6
+        uses: anchore/scan-action@3343887d815d7b07465f6fdcd395bd66508d486a #v3.6.4
         with:
           image: "localbuild/${{ matrix.FROM }}"
           fail-build: false
