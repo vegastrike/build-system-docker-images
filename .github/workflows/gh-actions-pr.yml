@@ -57,6 +57,7 @@ jobs:
     # As opposed to the merge commit
     - name: Move to PR HEAD
       run: git checkout HEAD^2
+
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
