@@ -30,8 +30,8 @@ jobs:
           #- 'fedora:41'
           - 'fedora:40'
           - 'fedora:39'
-          - 'rockylinux:9.4'
-          - 'rockylinux:8.10'
+          - 'rockylinux/rockylinux:9.4'
+          - 'rockylinux/rockylinux:8.10'
           - 'manjarolinux/base'
           #- 'funtoo/stage3-generic_64'
 
