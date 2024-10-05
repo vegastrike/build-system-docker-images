@@ -310,7 +310,6 @@ function bootstrapOnPopOS ()
                       clang \
                       lsb-release
       ;;
-  case "$LINUX_CODENAME" in
     "noble")
       apt-get -qy install \
                       git \
