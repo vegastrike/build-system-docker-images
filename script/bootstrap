@@ -1734,7 +1734,7 @@ function bootstrapOnRockyLinux ()
                           libpng-devel \
                           expat-devel \
                           gtk3-devel \
-                          python3-devel \
+                          python3.11-devel \
                           rpm-build \
                           make \
                           clang
@@ -1761,7 +1761,7 @@ function bootstrapOnRockyLinux ()
                           libpng-devel \
                           expat-devel \
                           gtk3-devel \
-                          python3-devel \
+                          python3.11-devel \
                           rpm-build \
                           make \
                           clang
@@ -1788,7 +1788,7 @@ function bootstrapOnRockyLinux ()
                           libpng-devel \
                           expat-devel \
                           gtk3-devel \
-                          python3-devel \
+                          python3.11-devel \
                           rpm-build \
                           make \
                           clang
