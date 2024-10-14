@@ -57,14 +57,14 @@ function isYqInstalled() {
     return ${result}
 }
 
-# Command: CMD_SHOW_IMAGES
-function printImageNames() {
+# Command: CMD_SHOW_RELEASE_IMAGES
+function printImageReleaseNames() {
     isYqInstalled
     if [ $? -ne 0 ]; then
         return 1
     fi
 
-    echo "The following images are available:"
+    echo "The following images targets are available:"
     IFS="
 "
     for IMAGE_NAME in $(${YQ} eval '.jobs.build.strategy.matrix.FROM*' ${GITHUB_WORKFLOW}  | grep -v ^# | cut -f 2 -d \' | sort)
@@ -72,6 +72,35 @@ function printImageNames() {
         printf "\t${IMAGE_NAME}\n"
     done
     return 0
+}
+
+# Command: CMD_SHOW_IMAGES
+function printImageLocalNames() {
+    isYqInstalled
+    if [ $? -ne 0 ]; then
+        return 1
+    fi
+
+    echo "The following images are available locally:"
+    IFS="
+"
+    for IMAGE_NAME in $(docker images | grep ^vegastrike | tr -s ' ' ';' | cut -f 2 -d ';' | sort)
+    do
+        printf "\t${IMAGE_NAME}\n"
+    done
+    return 0
+}
+
+# Command: CMD_BUILD_BASE_IMAGE
+function buildBaseImage() {
+    local IMAGE_BASE="${1}"
+    local DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo "${IMAGE_BASE}" | sed 's/:/_/' | sed 's/\//_/')"
+    local IS_RELEASE=0
+    local MY_OS_NAME="linux"
+    ${DOCKER} build \
+        --build-arg from="${IMAGE_BASE}" \
+        --tag "${DOCKER_IMG_NAME}" \
+        ..
 }
 
 # Command: CMD_BUILD_IMAGE
@@ -107,7 +136,9 @@ function printInfo() {
 
 # Variablized commands and argument names
 CMD_HELP="help"
+CMD_SHOW_RELEASE_IMAGES="show-ci-images"
 CMD_SHOW_IMAGES="show-images"
+CMD_BUILD_BASE_IMAGE="build-base"
 CMD_BUILD_IMAGE="build"
 CMD_RUN_IMAGE="run"
 
@@ -135,8 +166,10 @@ function printHelp() {
     echo
     echo "  <command> may be one of the following:"
     echo "      ${CMD_HELP}             Show this dialog"
-    echo "      ${CMD_SHOW_IMAGES}      List Images used by the Vega Strike CI system"
-    echo "      ${CMD_BUILD_IMAGE}            Build the image"
+    echo "      ${CMD_SHOW_RELEASE_IMAGES}   Show image targets used by the CI systems"
+    echo "      ${CMD_SHOW_IMAGES}      List Images used by the Vega Strike CI system available locally"
+    echo "      ${CMD_BUILD_BASE_IMAGE}       Build the base image (CI Image)"
+    echo "      ${CMD_BUILD_IMAGE}            Build the image (Dev Image)"
     echo "      ${CMD_RUN_IMAGE}              Run the image"
     echo
 }
@@ -155,8 +188,19 @@ do
                 printInfo
                 exit 0
                 ;;
+            "${CMD_SHOW_RELEASE_IMAGES}")
+                printImageReleaseNames "${YQ}"
+                processOpErrors $?
+                exit $?
+                ;;
             "${CMD_SHOW_IMAGES}")
-                printImageNames "${YQ}"
+                printImageLocalNames "${YQ}"
+                processOpErrors $?
+                exit $?
+                ;;
+            "${CMD_BUILD_BASE_IMAGE}")
+                printInfo
+                buildBaseImage "${IMAGE_BASE}"
                 processOpErrors $?
                 exit $?
                 ;;
