@@ -103,6 +103,13 @@ function buildBaseImage() {
         ..
 }
 
+# Command: CMD_PULL_BASE_IMAGE
+function pullBaseImage() {
+    local IMAGE_BASE="${1}"
+    local DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo "${IMAGE_BASE}" | sed 's/:/_/' | sed 's/\//_/')"
+    ${DOCKER} pull ${DOCKER_IMG_NAME}
+}
+
 # Command: CMD_BUILD_IMAGE
 function buildImage() {
     local IMAGE_BASE="${1}"
@@ -140,6 +147,7 @@ CMD_SHOW_RELEASE_IMAGES="show-ci-images"
 CMD_SHOW_IMAGES="show-images"
 CMD_BUILD_BASE_IMAGE="build-base"
 CMD_BUILD_IMAGE="build"
+CMD_PULL_BASE_IMAGE="pull-base"
 CMD_RUN_IMAGE="run"
 
 ARG_IMAGE_BASE="--image-base"
@@ -169,6 +177,7 @@ function printHelp() {
     echo "      ${CMD_SHOW_RELEASE_IMAGES}   Show image targets used by the CI systems"
     echo "      ${CMD_SHOW_IMAGES}      List Images used by the Vega Strike CI system available locally"
     echo "      ${CMD_BUILD_BASE_IMAGE}       Build the base image (CI Image)"
+    echo "      ${CMD_PULL_BASE_IMAGE}        Pull the base image (CI Image) from Docker Hub"
     echo "      ${CMD_BUILD_IMAGE}            Build the image (Dev Image)"
     echo "      ${CMD_RUN_IMAGE}              Run the image"
     echo
@@ -207,6 +216,12 @@ do
             "${CMD_BUILD_IMAGE}")
                 printInfo
                 buildImage "${IMAGE_BASE}" "${IMAGE_TAG}" "${GITHUB_USERNAME}" "${GIT_BRANCH}"
+                processOpErrors $?
+                exit $?
+                ;;
+            "${CMD_PULL_BASE_IMAGE}")
+                printInfo
+                pullBaseImage "${IMAGE_BASE}"
                 processOpErrors $?
                 exit $?
                 ;;
