@@ -44,7 +44,7 @@ jobs:
           - 'rockylinux/rockylinux:9.4'
           - 'rockylinux/rockylinux:8.10'
           - 'manjarolinux/base'
-          - 'funtoo/stage3-generic_64'
+          # - 'funtoo/stage3-generic_64'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

@@ -41,7 +41,7 @@ jobs:
           - 'rockylinux/rockylinux:9.4'
           - 'rockylinux/rockylinux:8.10'
           - 'manjarolinux/base'
-          - 'funtoo/stage3-generic_64'
+          # - 'funtoo/stage3-generic_64'
 
     steps:
     - name: Checkout repository
