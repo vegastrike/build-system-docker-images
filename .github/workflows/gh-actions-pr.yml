@@ -12,6 +12,7 @@ jobs:
       matrix:
         FROM:
           - 'ubuntu:noble'
+          - 'ubuntu:mantic'
           - 'ubuntu:jammy'
           - 'ubuntu:focal'
           - 'linuxmintd/mint22-amd64'
@@ -30,6 +31,7 @@ jobs:
           #- 'fedora:41'
           - 'fedora:40'
           - 'fedora:39'
+          - 'rockylinux/rockylinux:9.5'
           - 'rockylinux/rockylinux:9.4'
           - 'rockylinux/rockylinux:8.10'
           - 'manjarolinux/base'
