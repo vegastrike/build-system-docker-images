@@ -2001,7 +2001,8 @@ function bootstrapOnFuntoo ()
         libvorbis \
         libXmu \
         openal \
-        make
+        make \
+        gnome-kit
 }
 
 function bootstrapOnArch ()
