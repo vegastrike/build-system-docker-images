@@ -1982,7 +1982,7 @@ function bootstrapOnFuntoo ()
   dispatch-conf
   # enable `autounmask-write` so that USE flags
   # change in the image appropriately
-  emerge --autounmask-write \
+  USE="-libffi -userland_GNU gles2" emerge --autounmask-write \
         cmake \
         boost \
         libsdl \
