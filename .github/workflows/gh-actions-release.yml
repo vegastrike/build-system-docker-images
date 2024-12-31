@@ -19,7 +19,6 @@ jobs:
       matrix:
         FROM:
           - 'ubuntu:noble'
-          - 'ubuntu:mantic'
           - 'ubuntu:jammy'
           - 'ubuntu:focal'
           - 'linuxmintd/mint22-amd64'
