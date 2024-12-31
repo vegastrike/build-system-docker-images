@@ -1984,9 +1984,6 @@ function bootstrapOnFuntoo ()
   emerge --autounmask-write \
         cmake \
         boost \
-        llvm \
-        clang \
-        gcc \
         libsdl \
         libsdl2 \
         expat \
