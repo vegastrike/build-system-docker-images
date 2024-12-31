@@ -34,7 +34,7 @@ jobs:
           - 'opensuse/leap:15.4'
           - 'opensuse/leap:15.3'
           - 'opensuse/leap:15.2'
-          #- 'fedora:41'
+          - 'fedora:41'
           - 'fedora:40'
           - 'fedora:39'
           - 'rockylinux/rockylinux:9.5'
