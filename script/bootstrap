@@ -293,25 +293,25 @@ function bootstrapOnLinuxMint ()
                             lsb-release
             ;;
         "virginia")
-              echo "Sorry, Linux Mint virginia is no longer supported"
-              exit 2
-              ;;
+            echo "Sorry, Linux Mint virginia is no longer supported"
+            exit 2
+            ;;
         "victoria")
-              echo "Sorry, Linux Mint victoria is no longer supported"
-              exit 2
-              ;;
+            echo "Sorry, Linux Mint victoria is no longer supported"
+            exit 2
+            ;;
         "vera")
-              echo "Sorry, Linux Mint vera is no longer supported"
-              exit 2
-              ;;
+            echo "Sorry, Linux Mint vera is no longer supported"
+            exit 2
+            ;;
         "vanessa")
-              echo "Sorry, Linux Mint vanessa is no longer supported"
-              exit 2
-              ;;
+            echo "Sorry, Linux Mint vanessa is no longer supported"
+            exit 2
+            ;;
         "ulyana")
-              echo "Sorry, Linux Mint ulyana is no longer supported"
-              exit 2
-              ;;
+            echo "Sorry, Linux Mint ulyana is no longer supported"
+            exit 2
+            ;;
         *)
             echo "This version of Linux Mint is not directly supported. You may be able to use the corresponding Ubuntu installation package"
             exit 2
@@ -323,73 +323,12 @@ function bootstrapOnOpenSuseLeap ()
 {
     case "${LINUX_VERSION_ID}" in
         "15.4")
-            zypper --non-interactive install -y \
-                                    libboost_log1_75_0-devel \
-                                    libboost_python-py3-1_75_0-devel \
-                                    libboost_system1_75_0-devel \
-                                    libboost_filesystem1_75_0-devel \
-                                    libboost_thread1_75_0-devel \
-                                    libboost_regex1_75_0-devel \
-                                    libboost_chrono1_75_0-devel \
-                                    libboost_atomic1_75_0-devel \
-                                    libboost_json1_75_0-devel \
-                                    libboost_program_options1_75_0-devel \
-                                    cmake \
-                                    gcc-c++ \
-                                    freeglut-devel \
-                                    libopenal0 \
-                                    openal-soft-devel \
-                                    libSDL-1_2-0 \
-                                    libSDL-devel \
-                                    libSDL2-devel \
-                                    libvorbis-devel \
-                                    libglvnd-devel \
-                                    libjpeg-turbo \
-                                    libjpeg62-devel \
-                                    libpng16-devel \
-                                    expat \
-                                    libexpat-devel \
-                                    libgtk-3-0 \
-                                    gtk3-devel \
-                                    python3-devel \
-                                    git \
-                                    rpm-build \
-                                    clang
+            echo "Sorry, openSUSE Leap 15.4 is no longer supported"
+            exit 2
             ;;
         "15.5")
-            zypper --non-interactive install -y \
-                                    libboost_log1_75_0-devel \
-                                    libboost_python-py3-1_75_0-devel \
-                                    libboost_system1_75_0-devel \
-                                    libboost_filesystem1_75_0-devel \
-                                    libboost_thread1_75_0-devel \
-                                    libboost_regex1_75_0-devel \
-                                    libboost_chrono1_75_0-devel \
-                                    libboost_atomic1_75_0-devel \
-                                    libboost_json1_75_0-devel \
-                                    libboost_container1_75_0-devel \
-                                    libboost_program_options1_75_0-devel \
-                                    cmake \
-                                    gcc-c++ \
-                                    freeglut-devel \
-                                    libopenal0 \
-                                    openal-soft-devel \
-                                    libSDL-1_2-0 \
-                                    libSDL-devel \
-                                    libSDL2-devel \
-                                    libvorbis-devel \
-                                    libglvnd-devel \
-                                    libjpeg-turbo \
-                                    libjpeg62-devel \
-                                    libpng16-devel \
-                                    expat \
-                                    libexpat-devel \
-                                    libgtk-3-0 \
-                                    gtk3-devel \
-                                    python3-devel \
-                                    git \
-                                    rpm-build \
-                                    clang
+            echo "Sorry, openSUSE Leap 15.5 is no longer supported"
+            exit 2
             ;;
         "15.6")
             zypper --non-interactive install -y \
