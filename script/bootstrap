@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2025-04-04 ---"
+echo "--- bootstrap | 2025-04-08 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -99,16 +99,8 @@ function bootstrapOnDebian()
                             clang \
                             lsb-release
             ;;
-        "bullseye")
-            echo "Sorry, Debian bullseye is no longer supported"
-            exit 2
-            ;;
-        "buster")
-            echo "Sorry, Debian buster is no longer supported"
-            exit 2
-            ;;
-        "stretch")
-            echo "Sorry, Debian stretch is no longer supported"
+        "bullseye"|"buster"|"stretch")
+            echo "Sorry, Debian ${LINUX_CODENAME} is no longer supported"
             exit 2
             ;;
         *)
@@ -162,28 +154,8 @@ function bootstrapOnUbuntu()
                             clang \
                             lsb-release
             ;;
-        "jammy")
-            echo "Sorry, Ubuntu jammy is no longer supported"
-            exit 2
-            ;;
-        "focal")
-            echo "Sorry, Ubuntu focal is no longer supported"
-            exit 2
-            ;;
-        "bionic")
-            echo "Sorry, Ubuntu bionic is no longer supported"
-            exit 2
-            ;;
-        "impish")
-            echo "Sorry, Ubuntu impish is no longer supported"
-            exit 2
-            ;;
-        "hirsute")
-            echo "Sorry, Ubuntu hirsute is no longer supported"
-            exit 2
-            ;;
-        "xenial")
-            echo "Sorry, Ubuntu xenial is no longer supported"
+        "jammy"|"hirsute"|"impish"|"focal"|"bionic"|"xenial")
+            echo "Sorry, Ubuntu ${LINUX_CODENAME} is no longer supported"
             exit 2
             ;;
         *)
@@ -292,24 +264,8 @@ function bootstrapOnLinuxMint ()
                             clang \
                             lsb-release
             ;;
-        "virginia")
-            echo "Sorry, Linux Mint virginia is no longer supported"
-            exit 2
-            ;;
-        "victoria")
-            echo "Sorry, Linux Mint victoria is no longer supported"
-            exit 2
-            ;;
-        "vera")
-            echo "Sorry, Linux Mint vera is no longer supported"
-            exit 2
-            ;;
-        "vanessa")
-            echo "Sorry, Linux Mint vanessa is no longer supported"
-            exit 2
-            ;;
-        "ulyana")
-            echo "Sorry, Linux Mint ulyana is no longer supported"
+        "virginia"|"victoria"|"vera"|"vanessa"|"ulyana")
+            echo "Sorry, Linux Mint ${LINUX_CODENAME} is no longer supported"
             exit 2
             ;;
         *)
@@ -322,12 +278,8 @@ function bootstrapOnLinuxMint ()
 function bootstrapOnOpenSuseLeap ()
 {
     case "${LINUX_VERSION_ID}" in
-        "15.4")
-            echo "Sorry, openSUSE Leap 15.4 is no longer supported"
-            exit 2
-            ;;
-        "15.5")
-            echo "Sorry, openSUSE Leap 15.5 is no longer supported"
+        "15.1"|"15.2"|"15.3"|"15.4"|"15.5")
+            echo "Sorry, openSUSE Leap ${LINUX_VERSION_ID} is no longer supported"
             exit 2
             ;;
         "15.6")
@@ -375,46 +327,10 @@ function bootstrapOnOpenSuseLeap ()
 function bootstrapOnFedora ()
 {
     case "${LINUX_VERSION_ID}" in
-        30)
-              echo "Sorry, Fedora 30 is no longer supported"
-              exit 2
-              ;;
-        31)
-              echo "Sorry, Fedora 31 is no longer supported"
-              exit 2
-              ;;
-        32)
-              echo "Sorry, Fedora 32 is no longer supported"
-              exit 2
-              ;;
-        33)
-              echo "Sorry, Fedora 33 is no longer supported"
-              exit 2
-              ;;
-        34)
-              echo "Sorry, Fedora 34 is no longer supported"
-              exit 2
-              ;;
-        35)
-              echo "Sorry, Fedora 35 is no longer supported"
-              exit 2
-              ;;
-        36)
-              echo "Sorry, Fedora 36 is no longer supported"
-              exit 2
-              ;;
-        37)
-              echo "Sorry, Fedora 37 is no longer supported"
-              exit 2
-              ;;
-        38)
-              echo "Sorry, Fedora 38 is no longer supported"
-              exit 2
-              ;;
-        39)
-              echo "Sorry, Fedora 39 is no longer supported"
-              exit 2
-              ;;
+        30|31|32|33|34|35|36|37|38|39)
+            echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
+            exit 2
+            ;;
         40)
             dnf install -y \
                                 git \
