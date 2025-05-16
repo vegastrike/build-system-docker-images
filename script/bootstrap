@@ -312,7 +312,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libjpeg-turbo \
                                     libjpeg62-devel \
                                     libpng16-devel \
-                                    libarchive-dev \
+                                    libarchive-devel \
                                     expat \
                                     libexpat-devel \
                                     libgtk-3-0 \
@@ -520,7 +520,7 @@ function bootstrapOnManjaro ()
                          libvorbis \
                          libxmu \
                          openal \
-                         libarchive \ 
+                         libarchive \
                          make
 }
 
