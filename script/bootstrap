@@ -70,6 +70,7 @@ function bootstrapOnDebian()
                             build-essential \
                             automake \
                             autoconf \
+                            libarchive-dev \
                             libpng16-16 \
                             libpng-dev \
                             libpng-tools \
@@ -433,6 +434,7 @@ function bootstrapOnFedora ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
