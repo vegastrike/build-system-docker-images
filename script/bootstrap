@@ -109,6 +109,7 @@ function bootstrapOnDebian()
                             build-essential \
                             automake \
                             autoconf \
+                            libarchive-dev \
                             libpng16-16 \
                             libpng-dev \
                             libpng-tools \
@@ -164,6 +165,7 @@ function bootstrapOnUbuntu()
                             build-essential \
                             automake \
                             autoconf \
+                            libarchive-dev \
                             libpng16-16 \
                             libpng-dev \
                             libpng-tools \
@@ -223,6 +225,7 @@ function bootstrapOnPopOS ()
                             build-essential \
                             automake \
                             autoconf \
+                            libarchive-dev \
                             libpng16-16 \
                             libpng-dev \
                             libpng-tools \
@@ -274,6 +277,7 @@ function bootstrapOnLinuxMint ()
                             build-essential \
                             automake \
                             autoconf \
+                            libarchive-dev \
                             libpng16-16 \
                             libpng-dev \
                             libpng-tools \
@@ -344,6 +348,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libjpeg-turbo \
                                     libjpeg62-devel \
                                     libpng16-devel \
+                                    libarchive-devel \
                                     expat \
                                     libexpat-devel \
                                     libgtk-3-0 \
@@ -384,6 +389,7 @@ function bootstrapOnFedora ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
@@ -405,6 +411,7 @@ function bootstrapOnFedora ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
@@ -462,6 +469,7 @@ function bootstrapOnCentOS ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
@@ -497,6 +505,7 @@ function bootstrapOnRedHat ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
@@ -533,6 +542,7 @@ function bootstrapOnRockyLinux ()
                                 expat-devel \
                                 gtk3-devel \
                                 python3-devel \
+                                libarchive-devel \
                                 rpm-build \
                                 make \
                                 clang
@@ -567,6 +577,7 @@ function bootstrapOnManjaro ()
                          libvorbis \
                          libxmu \
                          openal \
+                         libarchive \
                          make
 }
 
@@ -595,6 +606,7 @@ function bootstrapOnFuntoo ()
               libvorbis \
               libXmu \
               openal \
+              libarchive \
               make \
               x11-libs/gtk+
 }
@@ -625,6 +637,7 @@ function bootstrapOnArch ()
               libvorbis \
               libxmu \
               openal \
+              libarchive \
               make
 }
 
