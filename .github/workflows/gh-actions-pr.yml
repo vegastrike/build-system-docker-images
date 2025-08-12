@@ -13,7 +13,7 @@ jobs:
         FROM:
           - 'ubuntu:noble'
           - 'linuxmintd/mint22-amd64'
-          - 'debian/trixie'
+          - 'debian:trixie'
           - 'debian:bookworm'
           - 'opensuse/leap:15.6'
           - 'fedora:42'
