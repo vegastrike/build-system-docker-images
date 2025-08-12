@@ -62,6 +62,40 @@ function bootstrapOnDebian()
     fi
 
     case "$LINUX_CODENAME" in
+        "trixie")
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            python3-dev \
+                            build-essential \
+                            automake \
+                            autoconf \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg62-turbo-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl1.2-dev \
+                            libsdl2-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            libxmu-dev \
+                            clang \
+                            lsb-release \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev
+            ;;
         "bookworm")
             apt-get -qy remove \
                             libboost-python-dev \
@@ -97,7 +131,9 @@ function bootstrapOnDebian()
                             libboost-program-options1.81-dev \
                             libxmu-dev \
                             clang \
-                            lsb-release
+                            lsb-release \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev
             ;;
         "bullseye"|"buster"|"stretch")
             echo "Sorry, Debian ${LINUX_CODENAME} is no longer supported"
@@ -353,6 +389,27 @@ function bootstrapOnFedora ()
                                 clang
             ;;
         41)
+            dnf install -y \
+                                git \
+                                cmake \
+                                boost-devel \
+                                freeglut-devel \
+                                gcc-c++ \
+                                openal-soft-devel \
+                                sdl12-compat-devel \
+                                SDL2-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                rpm-build \
+                                make \
+                                clang
+            ;;
+        42)
             dnf install -y \
                                 git \
                                 cmake \
