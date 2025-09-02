@@ -25,6 +25,7 @@ jobs:
           - 'linuxmintd/mint22-amd64'
           - 'debian:trixie'
           - 'debian:bookworm'
+          - 'opensuse/leap:16.0'
           - 'opensuse/leap:15.6'
           - 'fedora:42'
           - 'fedora:41'
