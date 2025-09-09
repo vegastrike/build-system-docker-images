@@ -351,6 +351,7 @@ function bootstrapOnOpenSuseLeap ()
                                     clang
             ;;
         "16.0")
+            zypper --non-interactive refresh
             zypper --non-interactive install -y \
                                     libboost_log1_86_0-devel \
                                     libboost_python-py3-1_86_0-devel \
@@ -595,7 +596,7 @@ function bootstrapOnRockyLinux ()
                                 clang
             ;;
         "10.0")
-            dnf upgrade --refresh
+            dnf -y upgrade --refresh
             dnf config-manager --set-enabled crb
             dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
             dnf -y update
