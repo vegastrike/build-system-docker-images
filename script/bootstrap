@@ -595,8 +595,9 @@ function bootstrapOnRockyLinux ()
                                 clang
             ;;
         "10.0")
-            dnf -y install dnf-plugins-core
-            dnf config-manager --set-enabled devel
+            dnf upgrade --refresh
+            dnf config-manager --set-enabled crb
+            dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
             dnf -y update
             dnf -y install \
                                 git \
