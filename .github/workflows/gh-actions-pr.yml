@@ -24,6 +24,8 @@ jobs:
           - 'fedora:41'
           - 'fedora:40'
           - 'rockylinux/rockylinux:9.5'
+          - 'rockylinux/rockylinux:9.6'
+          - 'rockylinux/rockylinux:10.0'
           - 'manjarolinux/base'
           # - 'funtoo/stage3-generic_64'
 
