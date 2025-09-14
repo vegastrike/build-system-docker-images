@@ -83,6 +83,7 @@ function bootstrapOnDebian()
                             libglvnd-dev \
                             libgl1-mesa-dev \
                             libsdl2-dev \
+                            libsdl2-image-dev \
                             libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
@@ -122,6 +123,7 @@ function bootstrapOnDebian()
                             libglvnd-dev \
                             libgl1-mesa-dev \
                             libsdl2-dev \
+                            libsdl2-image-dev \
                             libpostproc-dev \
                             freeglut3-dev \
                             libboost-python1.81-dev \
@@ -176,6 +178,7 @@ function bootstrapOnUbuntu()
                             libglvnd-dev \
                             libgl1-mesa-dev \
                             libsdl2-dev \
+                            libsdl2-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -235,6 +238,7 @@ function bootstrapOnPopOS ()
                             libglvnd-dev \
                             libgl1-mesa-dev \
                             libsdl2-dev \
+                            libsdl2-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -286,6 +290,7 @@ function bootstrapOnLinuxMint ()
                             libglvnd-dev \
                             libgl1-mesa-dev \
                             libsdl2-dev \
+                            libsdl2-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -335,6 +340,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libopenal0 \
                                     openal-soft-devel \
                                     libSDL2-devel \
+                                    libSDL2_image-devel \
                                     libvorbis-devel \
                                     libglvnd-devel \
                                     libjpeg-turbo \
@@ -370,6 +376,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libopenal0 \
                                     openal-soft-devel \
                                     libSDL2-devel \
+                                    libSDL2_image-devel \
                                     libvorbis-devel \
                                     libglvnd-devel \
                                     libjpeg-turbo \
@@ -408,6 +415,7 @@ function bootstrapOnFedora ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -429,6 +437,7 @@ function bootstrapOnFedora ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -450,6 +459,7 @@ function bootstrapOnFedora ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -486,6 +496,7 @@ function bootstrapOnCentOS ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -512,6 +523,7 @@ function bootstrapOnCentOS ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -540,6 +552,7 @@ function bootstrapOnCentOS ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -575,6 +588,7 @@ function bootstrapOnRedHat ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -601,6 +615,7 @@ function bootstrapOnRedHat ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -629,6 +644,7 @@ function bootstrapOnRedHat ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -665,6 +681,7 @@ function bootstrapOnRockyLinux ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -691,6 +708,7 @@ function bootstrapOnRockyLinux ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -719,6 +737,7 @@ function bootstrapOnRockyLinux ()
                                 gcc-c++ \
                                 openal-soft-devel \
                                 SDL2-devel \
+                                SDL2_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -746,6 +765,7 @@ function bootstrapOnManjaro ()
                          gcc \
                          gcc-libs \
                          sdl2 \
+                         sdl2_image \
                          expat \
                          gtk3 \
                          libglvnd \
@@ -774,6 +794,7 @@ function bootstrapOnFuntoo ()
               cmake \
               boost \
               libsdl2 \
+              libsdl2-image \
               expat \
               gtk3 \
               libglvnd \
@@ -806,6 +827,7 @@ function bootstrapOnArch ()
               gcc \
               gcc12 \
               sdl2 \
+              sdl2_image \
               expat \
               gtk3 \
               libglvnd \
