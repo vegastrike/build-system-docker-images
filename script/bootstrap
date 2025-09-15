@@ -669,7 +669,9 @@ function bootstrapOnRockyLinux ()
     case "${LINUX_VERSION_ID}" in
         "9.5")
             dnf -y install dnf-plugins-core
-            dnf config-manager --set-enabled devel
+            dnf config-manager --set-enabled crb
+            dnf config-manager --set-enabled devel 
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
@@ -696,7 +698,9 @@ function bootstrapOnRockyLinux ()
             ;;
         "9.6")
             dnf -y install dnf-plugins-core
+            dnf config-manager --set-enabled crb
             dnf config-manager --set-enabled devel
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
