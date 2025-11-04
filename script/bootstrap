@@ -84,6 +84,8 @@ function bootstrapOnDebian()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
                             libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
@@ -124,6 +126,8 @@ function bootstrapOnDebian()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
                             libpostproc-dev \
                             freeglut3-dev \
                             libboost-python1.81-dev \
@@ -179,6 +183,8 @@ function bootstrapOnUbuntu()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -239,6 +245,8 @@ function bootstrapOnPopOS ()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -291,6 +299,8 @@ function bootstrapOnLinuxMint ()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -799,6 +809,8 @@ function bootstrapOnFuntoo ()
               boost \
               libsdl2 \
               libsdl2-image \
+              libsdl3\
+              libsdl3image \
               expat \
               gtk3 \
               libglvnd \
