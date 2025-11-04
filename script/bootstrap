@@ -773,6 +773,7 @@ function bootstrapOnRockyLinux ()
 
 function bootstrapOnManjaro ()
 {
+        pacman -S --refresh --noconfirm archlinux-keyring
         pacman -S --refresh --noconfirm cmake \
                          boost \
                          clang \
@@ -780,6 +781,7 @@ function bootstrapOnManjaro ()
                          gcc-libs \
                          sdl2 \
                          sdl2_image \
+                         sdl3 \
                          expat \
                          gtk3 \
                          libglvnd \
@@ -795,7 +797,12 @@ function bootstrapOnManjaro ()
                          libxmu \
                          openal \
                          libarchive \
+                         yay \
                          make
+
+        # NOTE: `yay` requires SystemD which isn't available in Docker
+        # AUR related packages that are not in pacman by default
+        # yay -S --noconfirm sdl3_image
 }
 
 function bootstrapOnFuntoo ()
