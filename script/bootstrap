@@ -100,6 +100,7 @@ function bootstrapOnDebian()
                             libprotobuf-dev
             ;;
         "bookworm")
+            echo "Bookworm does NOT support SDL3"
             apt-get -qy remove \
                             libboost-python-dev \
                             libboost-log-dev \
@@ -126,8 +127,6 @@ function bootstrapOnDebian()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libsdl3-dev \
-                            libsdl3-image-dev \
                             libpostproc-dev \
                             freeglut3-dev \
                             libboost-python1.81-dev \
@@ -235,6 +234,7 @@ function bootstrapOnUbuntu()
                             lsb-release
             ;;
         "noble")
+            echo "Noble does NOT support SDL3"
             apt-get -qy install \
                             git \
                             cmake \
@@ -257,8 +257,6 @@ function bootstrapOnUbuntu()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libsdl3-dev \
-                            libsdl3-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
@@ -349,6 +347,7 @@ function bootstrapOnLinuxMint ()
         apt-get -qy upgrade
     fi
 
+    echo "Linux Mint base Distros do NOT support SDL3"
     case "$LINUX_CODENAME" in
         "wilma"|"zara")
             apt-get -qy install \
@@ -373,8 +372,6 @@ function bootstrapOnLinuxMint ()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libsdl3-dev \
-                            libsdl3-image-dev \
                             libopengl0 \
                             libpostproc-dev \
                             freeglut3-dev \
