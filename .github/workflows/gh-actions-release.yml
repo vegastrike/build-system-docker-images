@@ -21,24 +21,29 @@ jobs:
       fail-fast: false
       matrix:
         FROM:
+          - 'ubuntu:questing'
+          - 'ubuntu:plucky'
           - 'ubuntu:noble'
+          - 'linuxmintd/mint22.2-amd64'
           - 'linuxmintd/mint22-amd64'
           - 'debian:trixie'
           - 'debian:bookworm'
           - 'opensuse/leap:16.0'
           - 'opensuse/leap:15.6'
+          - 'fedora:43'
           - 'fedora:42'
           - 'fedora:41'
           - 'fedora:40'
-          - 'rockylinux/rockylinux:9.5'
-          - 'rockylinux/rockylinux:9.6'
           - 'rockylinux/rockylinux:10.0'
+          - 'rockylinux/rockylinux:9.6'
+          - 'rockylinux/rockylinux:9.5'
           - 'manjarolinux/base'
+          - 'alex5402/endeavouros'
           # - 'funtoo/stage3-generic_64'
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       with:
         fetch-depth: 2
         submodules: false
@@ -53,7 +58,7 @@ jobs:
         echo "${TAG_NAME}"
 
     - name: Docker Login
-      uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 #v3.1.0
+      uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef #v3.6.0
       with:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_KEY }}
