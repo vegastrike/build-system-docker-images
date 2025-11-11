@@ -872,7 +872,6 @@ function bootstrapOnManjaro ()
                          sdl2 \
                          sdl2_image \
                          sdl3 \
-                         sdl3_image \
                          expat \
                          gtk3 \
                          libglvnd \
@@ -967,7 +966,6 @@ function bootstrapOnEndeavourOS ()
               sdl2 \
               sdl2_image \
               sdl3 \
-              sdl3_image \
               expat \
               gtk3 \
               libglvnd \
