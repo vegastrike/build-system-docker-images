@@ -156,6 +156,80 @@ function bootstrapOnUbuntu()
     fi
 
     case "$LINUX_CODENAME" in
+        "questing")
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            python3-dev \
+                            build-essential \
+                            automake \
+                            autoconf \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgdk-pixbuf-2.0-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
+                            libopengl0 \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            libxmu-dev \
+                            clang \
+                            lsb-release
+            ;;
+        "plucky")
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            python3-dev \
+                            build-essential \
+                            automake \
+                            autoconf \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgdk-pixbuf-2.0-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
+                            libopengl0 \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            libxmu-dev \
+                            clang \
+                            lsb-release
+            ;;
         "noble")
             apt-get -qy install \
                             git \
@@ -268,7 +342,7 @@ function bootstrapOnLinuxMint ()
     fi
 
     case "$LINUX_CODENAME" in
-        "wilma")
+        "wilma"|"zara")
             apt-get -qy install \
                             git \
                             cmake \
@@ -322,6 +396,7 @@ function bootstrapOnOpenSuseLeap ()
             exit 2
             ;;
         "15.6")
+            zypper --non-interactive refresh
             zypper --non-interactive install -y \
                                     libboost_log1_75_0-devel \
                                     libboost_python-py3-1_75_0-devel \
@@ -460,6 +535,32 @@ function bootstrapOnFedora ()
                                 openal-soft-devel \
                                 SDL2-devel \
                                 SDL2_image-devel \
+                                SDL3-devel \
+                                SDL3_image-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                rpm-build \
+                                make \
+                                clang
+            ;;
+        43)
+            dnf install -y \
+                                git \
+                                cmake \
+                                boost-devel \
+                                freeglut-devel \
+                                gcc-c++ \
+                                openal-soft-devel \
+                                SDL2-devel \
+                                SDL2_image-devel \
+                                SDL3-devel \
+                                SDL3_image-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -771,6 +872,7 @@ function bootstrapOnManjaro ()
                          gcc-libs \
                          sdl2 \
                          sdl2_image \
+                         sdl3 \
                          expat \
                          gtk3 \
                          libglvnd \
@@ -833,6 +935,38 @@ function bootstrapOnArch ()
               gcc12 \
               sdl2 \
               sdl2_image \
+              sdl3 \
+              sdl3_image \
+              expat \
+              gtk3 \
+              libglvnd \
+              mesa \
+              python \
+              freeglut \
+              git \
+              libjpeg-turbo \
+              libpng \
+              libvorbis \
+              libxmu \
+              openal \
+              libarchive \
+              make
+}
+
+function bootstrapOnEndeavourOS ()
+{
+    # NOTE: Arch requires GCC 12 right now
+    # also installing latest GCC.
+    pacman -Sy --noconfirm \
+              base-devel \
+              cmake \
+              boost \
+              llvm \
+              clang \
+              gcc \
+              sdl2 \
+              sdl2_image \
+              sdl3 \
               expat \
               gtk3 \
               libglvnd \
@@ -888,6 +1022,9 @@ case "${LINUX_ID}" in
         ;;
     "arch")
         bootstrapOnArch
+        ;;
+    "endeavouros")
+        bootstrapOnEndeavourOS
         ;;
     *)
         echo "Sorry, unrecognized/unsupported Linux distribution"
