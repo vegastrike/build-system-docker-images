@@ -865,7 +865,7 @@ function bootstrapOnRockyLinux ()
 function bootstrapOnManjaro ()
 {
         pacman-key --populate archlinux manjaro
-        pacman -S archlinux-keyring
+        pacman -S --noconfirm archlinux-keyring
         pacman -S --refresh --noconfirm cmake \
                          boost \
                          clang \
