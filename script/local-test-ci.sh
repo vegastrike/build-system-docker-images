@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export FROM="debian:bullseye"
+export FROM="dokken/centos-stream-10:main"
 export MY_OS_NAME="linux"
 export IS_RELEASE=0
 
