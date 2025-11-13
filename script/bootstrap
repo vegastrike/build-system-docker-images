@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2025-11-11 ---"
+echo "--- bootstrap | 2025-11-13 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -592,7 +592,9 @@ function bootstrapOnCentOS ()
     case "${LINUX_VERSION_ID}" in
         "9.5")
             dnf -y install dnf-plugins-core
+            dnf config-manager --set-enabled crb
             dnf config-manager --set-enabled devel
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
@@ -619,7 +621,9 @@ function bootstrapOnCentOS ()
             ;;
         "9.6")
             dnf -y install dnf-plugins-core
+            dnf config-manager --set-enabled crb
             dnf config-manager --set-enabled devel
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
@@ -685,7 +689,9 @@ function bootstrapOnRedHat ()
     case "${LINUX_VERSION_ID}" in
         "9.5")
             dnf -y install dnf-plugins-core
+            dnf config-manager --set-enabled crb
             dnf config-manager --set-enabled devel
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
@@ -711,7 +717,9 @@ function bootstrapOnRedHat ()
             ;;
         "9.6")
             dnf -y install dnf-plugins-core
+            dnf config-manager --set-enabled crb
             dnf config-manager --set-enabled devel
+            dnf -y install epel-release
             dnf -y update
             dnf -y install \
                                 git \
@@ -872,7 +880,13 @@ function bootstrapOnRockyLinux ()
 function bootstrapOnManjaro ()
 {
         pacman -Sy --noconfirm archlinux-keyring manjaro-keyring
-        pacman -S --refresh --noconfirm cmake \
+
+        if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+        then
+            pacman -Syyu --refresh --noconfirm
+        fi
+
+        pacman -Sy --noconfirm cmake \
                          boost \
                          clang \
                          gcc \
@@ -937,6 +951,11 @@ function bootstrapOnFuntoo ()
 
 function bootstrapOnArch ()
 {
+    if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+    then
+        pacman -Syyu --refresh --noconfirm
+    fi
+
     # NOTE: Arch requires GCC 12 right now
     # also installing latest GCC.
     pacman -Sy --noconfirm \
@@ -969,9 +988,14 @@ function bootstrapOnArch ()
 
 function bootstrapOnEndeavourOS ()
 {
+    if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+    then
+        pacman -Syyu --refresh --noconfirm
+    fi
+
     # NOTE: Arch requires GCC 12 right now
     # also installing latest GCC.
-    pacman -Sy --refresh --noconfirm \
+    pacman -Sy --noconfirm \
               base-devel \
               icu \
               cmake \
