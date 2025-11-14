@@ -2,6 +2,7 @@ name: Anchore-Container-Scan
 permissions:
   contents: read
   pull-requests: read
+  security-events: write
 
 # Controls when the action will run.
 on:
