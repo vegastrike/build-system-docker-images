@@ -66,7 +66,7 @@ jobs:
           MY_OS_NAME: linux
           IS_RELEASE: 0
 
-      - name: build local container
+      - name: Build local container
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 #v6.18.0
         env:
           FROM:       ${{ matrix.FROM }}
@@ -80,7 +80,13 @@ jobs:
 
       - name: Scan image
         uses: anchore/scan-action@568b89d27fc18c60e56937bff480c91c772cd993 #v7.1.0
+        id: scan
         with:
           image: "localbuild/${{ matrix.FROM }}"
           fail-build: false
           severity-cutoff: critical
+
+      - name: Upload Anchore scan SARIF report
+        uses: github/codeql-action/upload-sarif@17783bfb99b07f70fae080b654aed0c514057477 #v4.30.9
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
