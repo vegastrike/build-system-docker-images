@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------"
-echo "--- bootstrap | 2025-11-13 ---"
+echo "--- bootstrap | 2025-11-14 ---"
 echo "------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -651,6 +651,7 @@ function bootstrapOnRedHat ()
             dnf -y upgrade --refresh
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
+            dnf -y config-manager --set-enabled devel
             dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
             dnf -y update
             dnf -y install \
@@ -664,6 +665,7 @@ function bootstrapOnRedHat ()
                                 openal-soft-devel \
                                 SDL2-devel \
                                 SDL2_image-devel \
+                                SDL3-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
@@ -748,6 +750,7 @@ function bootstrapOnRockyLinux ()
             dnf -y upgrade --refresh
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
+            dnf -y config-manager --set-enabled devel
             dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
             dnf -y update
             dnf -y install \
@@ -761,6 +764,7 @@ function bootstrapOnRockyLinux ()
                                 openal-soft-devel \
                                 SDL2-devel \
                                 SDL2_image-devel \
+                                SDL3-devel \
                                 libvorbis-devel \
                                 libglvnd-devel \
                                 libjpeg-turbo-devel \
