@@ -20,30 +20,50 @@ jobs:
   scan:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.allow_failure }}
 
     strategy:
       fail-fast: false
       matrix:
-        FROM:
-          - 'ubuntu:questing'
-          - 'ubuntu:plucky'
-          - 'ubuntu:noble'
-          - 'linuxmintd/mint22.2-amd64'
-          - 'linuxmintd/mint22-amd64'
-          - 'debian:trixie'
-          - 'debian:bookworm'
-          - 'opensuse/leap:16.0'
-          - 'opensuse/leap:15.6'
-          - 'fedora:43'
-          - 'fedora:42'
-          - 'fedora:41'
-          - 'fedora:40'
-          - 'rockylinux/rockylinux:10.0'
-          - 'rockylinux/rockylinux:9.6'
-          - 'rockylinux/rockylinux:9.5'
-          - 'manjarolinux/base'
-          - 'alex5402/endeavouros'
-          # - 'funtoo/stage3-generic_64'
+        include:
+          - FROM: 'ubuntu:questing'
+            allow_failure: false
+          - FROM: 'ubuntu:plucky'
+            allow_failure: false
+          - FROM: 'ubuntu:noble'
+            allow_failure: false
+          - FROM: 'linuxmintd/mint22.2-amd64'
+            allow_failure: false
+          - FROM: 'linuxmintd/mint22-amd64'
+            allow_failure: false
+          - FROM: 'debian:trixie'
+            allow_failure: false
+          - FROM: 'debian:bookworm'
+            allow_failure: false
+          - FROM: 'opensuse/leap:16.0'
+            allow_failure: false
+          - FROM: 'opensuse/leap:15.6'
+            allow_failure: false
+          - FROM: 'fedora:43'
+            allow_failure: false
+          - FROM: 'fedora:42'
+            allow_failure: false
+          - FROM: 'fedora:41'
+            allow_failure: false
+          - FROM: 'fedora:40'
+            allow_failure: false
+          - FROM: 'rockylinux/rockylinux:10.0'
+            allow_failure: false
+          - FROM: 'rockylinux/rockylinux:9.6'
+            allow_failure: false
+          - FROM: 'rockylinux/rockylinux:9.5'
+            allow_failure: false
+          - FROM: 'manjarolinux/base'
+            allow_failure: false
+          - FROM: 'alex5402/endeavouros'
+            allow_failure: true
+          # - FROM: 'funtoo/stage3-generic_64'
+          #  allow_failure: false
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
