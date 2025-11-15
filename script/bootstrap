@@ -97,7 +97,18 @@ function bootstrapOnDebian()
                             clang \
                             lsb-release \
                             opentelemetry-cpp-dev \
-                            libprotobuf-dev
+                            libprotobuf-dev \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            gnome-desktop-testing \
+                            libasound2-dev \
+                            libpulse-dev \
+                            libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
+                            libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
+                            libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+                            libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev \
+                            libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
             ;;
         "bookworm")
             echo "Bookworm does NOT support SDL3"
@@ -136,7 +147,18 @@ function bootstrapOnDebian()
                             libboost-program-options1.81-dev \
                             libxmu-dev \
                             clang \
-                            lsb-release
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            gnome-desktop-testing \
+                            libasound2-dev \
+                            libpulse-dev \
+                            libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
+                            libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
+                            libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+                            libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev \
+                            libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
             ;;
         "bullseye"|"buster"|"stretch")
             echo "Sorry, Debian ${LINUX_CODENAME} is no longer supported"
@@ -267,7 +289,18 @@ function bootstrapOnUbuntu()
                             libboost-program-options-dev \
                             libxmu-dev \
                             clang \
-                            lsb-release
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            gnome-desktop-testing \
+                            libasound2-dev \
+                            libpulse-dev \
+                            libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
+                            libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
+                            libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+                            libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev \
+                            libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
             ;;
         "jammy"|"hirsute"|"impish"|"focal"|"bionic"|"xenial")
             echo "Sorry, Ubuntu ${LINUX_CODENAME} is no longer supported"
@@ -329,7 +362,18 @@ function bootstrapOnPopOS ()
                             libboost-program-options-dev \
                             libxmu-dev \
                             clang \
-                            lsb-release
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            gnome-desktop-testing \
+                            libasound2-dev \
+                            libpulse-dev \
+                            libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
+                            libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
+                            libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+                            libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev \
+                            libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
             ;;
         *)
             echo "Sorry, this version of Pop! OS is not currently supported"
@@ -382,7 +426,18 @@ function bootstrapOnLinuxMint ()
                             libboost-program-options-dev \
                             libxmu-dev \
                             clang \
-                            lsb-release
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            gnome-desktop-testing \
+                            libasound2-dev \
+                            libpulse-dev \
+                            libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
+                            libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
+                            libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
+                            libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev \
+                            libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
             ;;
         "virginia"|"victoria"|"vera"|"vanessa"|"ulyana")
             echo "Sorry, Linux Mint ${LINUX_CODENAME} is no longer supported"
@@ -436,7 +491,10 @@ function bootstrapOnOpenSuseLeap ()
                                     python3-devel \
                                     git \
                                     rpm-build \
-                                    clang
+                                    clang \
+                                    libunwind-devel libusb-1_0-devel Mesa-libGL-devel libxkbcommon-devel libdrm-devel \
+                                    libgbm-devel pipewire-devel libpulse-devel sndio-devel Mesa-libEGL-devel alsa-devel xwayland-devel \
+                                    wayland-devel wayland-protocols-devel
             ;;
         "16.0")
             zypper --non-interactive refresh
@@ -472,7 +530,10 @@ function bootstrapOnOpenSuseLeap ()
                                     python3-devel \
                                     git \
                                     rpm-build \
-                                    clang
+                                    clang \
+                                    libunwind-devel libusb-1_0-devel Mesa-libGL-devel libxkbcommon-devel libdrm-devel \
+                                    libgbm-devel pipewire-devel libpulse-devel sndio-devel Mesa-libEGL-devel alsa-devel xwayland-devel \
+                                    wayland-devel wayland-protocols-devel
             ;;
         *)
             echo "Sorry, this version of openSUSE Leap is unsupported"
