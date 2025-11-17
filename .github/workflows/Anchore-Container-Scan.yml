@@ -42,7 +42,7 @@ jobs:
           - 'rockylinux/rockylinux:9.6'
           - 'rockylinux/rockylinux:9.5'
           - 'manjarolinux/base'
-          - 'alex5402/endeavouros'
+          # - 'alex5402/endeavouros'
           # - 'funtoo/stage3-generic_64'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
