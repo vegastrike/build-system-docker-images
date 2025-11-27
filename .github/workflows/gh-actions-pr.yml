@@ -51,6 +51,5 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        MY_OS_NAME: linux
         IS_RELEASE: 0
       run: script/cibuild
