@@ -62,7 +62,7 @@ function bootstrapOnDebian()
     fi
 
     case "$LINUX_CODENAME" in
-        "trixie"|"bookworm")
+        "trixie")
             apt-get -qy install \
                             git \
                             cmake \
@@ -95,7 +95,104 @@ function bootstrapOnDebian()
                             libx11-xcb-dev \
                             libxcb-dpms0-dev \
                             libxxf86vm-dev \
-                            libxcb-xv0-dev
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg62-turbo-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            clang \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev
+            ;;
+        "bookworm")
+            echo "Bookworm does NOT support SDL3"
+            apt-get -qy remove \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev
+            apt-get -qy autoremove
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            build-essential \
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            autoconf \
+                            autoconf-archive \
+                            automake \
+                            libtool \
+                            curl \
+                            zip \
+                            unzip \
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg62-turbo-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python1.81-dev \
+                            libboost-log1.81-dev \
+                            libboost-regex1.81-dev \
+                            libboost-json1.81-dev \
+                            libboost-program-options1.81-dev \
+                            clang \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev
             ;;
         "bullseye"|"buster"|"stretch")
             echo "Sorry, Debian ${LINUX_CODENAME} is no longer supported"
@@ -118,7 +215,7 @@ function bootstrapOnUbuntu()
     fi
 
     case "$LINUX_CODENAME" in
-        "questing"|"plucky"|"noble")
+        "questing"|"plucky")
             apt-get -qy install \
                             git \
                             cmake \
@@ -151,7 +248,99 @@ function bootstrapOnUbuntu()
                             libx11-xcb-dev \
                             libxcb-dpms0-dev \
                             libxxf86vm-dev \
-                            libxcb-xv0-dev
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            clang \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev
+            ;;
+        "noble")
+            echo "Noble does NOT support SDL3"
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            build-essential \
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            autoconf \
+                            autoconf-archive \
+                            automake \
+                            libtool \
+                            curl \
+                            zip \
+                            unzip \
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            clang \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev
             ;;
         "jammy"|"hirsute"|"impish"|"focal"|"bionic"|"xenial")
             echo "Sorry, Ubuntu ${LINUX_CODENAME} is no longer supported"
@@ -208,7 +397,34 @@ function bootstrapOnLinuxMint ()
                             libx11-xcb-dev \
                             libxcb-dpms0-dev \
                             libxxf86vm-dev \
-                            libxcb-xv0-dev
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            libpostproc-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            clang \
+                            opentelemetry-cpp-dev \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev
             ;;
         "virginia"|"victoria"|"vera"|"vanessa"|"ulyana")
             echo "Sorry, Linux Mint ${LINUX_CODENAME} is no longer supported"
@@ -256,11 +472,49 @@ function bootstrapOnOpenSuseLeap ()
                                     wayland-protocols-devel \
                                     ibus-devel \
                                     python3-Jinja2 \
-                                    libX11-devel
+                                    libboost_log1_75_0-devel \
+                                    libboost_python-py3-1_75_0-devel \
+                                    libboost_system1_75_0-devel \
+                                    libboost_filesystem1_75_0-devel \
+                                    libboost_thread1_75_0-devel \
+                                    libboost_regex1_75_0-devel \
+                                    libboost_chrono1_75_0-devel \
+                                    libboost_atomic1_75_0-devel \
+                                    libboost_json1_75_0-devel \
+                                    libboost_container1_75_0-devel \
+                                    libboost_program_options1_75_0-devel \
+                                    freeglut-devel \
+                                    libopenal0 \
+                                    openal-soft-devel \
+                                    libSDL2-devel \
+                                    libSDL2_image-devel \
+                                    libvorbis-devel \
+                                    libglvnd-devel \
+                                    libjpeg-turbo \
+                                    libjpeg62-devel \
+                                    libpng16-devel \
+                                    libarchive-devel \
+                                    expat \
+                                    libexpat-devel \
+                                    libgtk-3-0 \
+                                    gtk3-devel \
+                                    python3-devel \
+                                    clang
             ;;
         "16.0")
             zypper --non-interactive refresh
             zypper --non-interactive install -y \
+                                    libboost_log1_86_0-devel \
+                                    libboost_python-py3-1_86_0-devel \
+                                    libboost_system1_86_0-devel \
+                                    libboost_filesystem1_86_0-devel \
+                                    libboost_thread1_86_0-devel \
+                                    libboost_regex1_86_0-devel \
+                                    libboost_chrono1_86_0-devel \
+                                    libboost_atomic1_86_0-devel \
+                                    libboost_json1_86_0-devel \
+                                    libboost_container1_86_0-devel \
+                                    libboost_program_options1_86_0-devel \
                                     cmake \
                                     gcc-c++ \
                                     git \
@@ -285,7 +539,24 @@ function bootstrapOnOpenSuseLeap ()
                                     libxkbcommon-devel \
                                     wayland-protocols-devel \
                                     ibus-devel \
-                                    python313-Jinja2
+                                    python313-Jinja2 \
+                                    freeglut-devel \
+                                    libopenal0 \
+                                    openal-soft-devel \
+                                    libSDL2-devel \
+                                    libSDL2_image-devel \
+                                    libvorbis-devel \
+                                    libglvnd-devel \
+                                    libjpeg-turbo \
+                                    libjpeg62-devel \
+                                    libpng16-devel \
+                                    libarchive-devel \
+                                    expat \
+                                    libexpat-devel \
+                                    libgtk-3-0 \
+                                    gtk3-devel \
+                                    python3-devel \
+                                    clang
             ;;
         *)
             echo "Sorry, this version of openSUSE Leap is unsupported"
@@ -333,7 +604,21 @@ function bootstrapOnFedora ()
                                 libxkbcommon-devel \
                                 wayland-protocols-devel \
                                 ibus-devel \
-                                python3-jinja2
+                                python3-jinja2 \
+                                boost-devel \
+                                freeglut-devel \
+                                openal-soft-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                rpm-build \
+                                clang \
+                                fribidi-devel
             ;;
         *)
             echo "Sorry, this version of Fedora is unsupported"
@@ -382,7 +667,24 @@ function bootstrapOnRedHat ()
                                 libxkbcommon-devel \
                                 wayland-protocols-devel \
                                 ibus-devel \
-                                python3-jinja2
+                                python3-jinja2 \
+                                boost-devel \
+                                boost-python3-devel \
+                                boost-json \
+                                freeglut-devel \
+                                openal-soft-devel \
+                                SDL2-devel \
+                                SDL2_image-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                clang \
+                                fribidi-devel
             ;;
         "10.0"|"10.1")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
@@ -421,7 +723,25 @@ function bootstrapOnRedHat ()
                                 libxkbcommon-devel \
                                 wayland-protocols-devel \
                                 ibus-devel \
-                                python3-jinja2
+                                python3-jinja2 \
+                                boost-devel \
+                                boost-python3-devel \
+                                boost-json \
+                                freeglut-devel \
+                                openal-soft-devel \
+                                SDL3-devel \
+                                SDL2-compat-devel \
+                                SDL2_image-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                clang \
+                                fribidi-devel
             ;;
         *)
             echo "Sorry, this version of Red Hat is unsupported"
@@ -470,7 +790,24 @@ function bootstrapOnRockyLinux ()
                                 libxkbcommon-devel \
                                 wayland-protocols-devel \
                                 ibus-devel \
-                                python3-jinja2
+                                python3-jinja2 \
+                                boost-devel \
+                                boost-python3-devel \
+                                boost-json \
+                                freeglut-devel \
+                                openal-soft-devel \
+                                SDL2-devel \
+                                SDL2_image-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                clang \
+                                fribidi-devel
             ;;
         "10.0"|"10.1")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
@@ -509,7 +846,25 @@ function bootstrapOnRockyLinux ()
                                 libxkbcommon-devel \
                                 wayland-protocols-devel \
                                 ibus-devel \
-                                python3-jinja2
+                                python3-jinja2 \
+                                boost-devel \
+                                boost-python3-devel \
+                                boost-json \
+                                freeglut-devel \
+                                openal-soft-devel \
+                                SDL3-devel \
+                                SDL2-compat-devel \
+                                SDL2_image-devel \
+                                libvorbis-devel \
+                                libglvnd-devel \
+                                libjpeg-turbo-devel \
+                                libpng-devel \
+                                expat-devel \
+                                gtk3-devel \
+                                python3-devel \
+                                libarchive-devel \
+                                clang \
+                                fribidi-devel
             ;;
         *)
             echo "Sorry, this version of Rocky Linux is unsupported"
@@ -540,7 +895,34 @@ function bootstrapOnManjaro ()
                          curl \
                          zip \
                          unzip \
-                         tar
+                         tar \
+                         boost \
+                         sdl3 \
+                         sdl2-compat \
+                         sdl2_image \
+                         expat \
+                         gtk3 \
+                         libglvnd \
+                         mesa \
+                         python \
+                         freeglut \
+                         libjpeg-turbo \
+                         libpng \
+                         libvorbis \
+                         libxmu \
+                         openal \
+                         libarchive \
+                         yay \
+                         hidapi \
+                         libgl \
+                         libusb \
+                         ninja \
+                         wayland \
+                         wayland-protocols
+
+        # NOTE: `yay` requires SystemD which isn't available in Docker
+        # AUR related packages that are not in pacman by default
+        # yay -S --noconfirm sdl3_image
 }
 
 function bootstrapOnFuntoo ()
@@ -554,7 +936,27 @@ function bootstrapOnFuntoo ()
               boost \
               python \
               git \
-              make
+              make \
+              libsdl2 \
+              libsdl2-image \
+              libsdl3 \
+              libsdl3image \
+              expat \
+              gtk3 \
+              libglvnd \
+              mesa \
+              python \
+              autoconf \
+              automake \
+              freeglut \
+              git \
+              libjpeg-turbo \
+              libpng \
+              libvorbis \
+              libXmu \
+              openal \
+              libarchive \
+              x11-libs/gtk+
 }
 
 function bootstrapOnArch ()
@@ -580,7 +982,32 @@ function bootstrapOnArch ()
               curl \
               zip \
               unzip \
-              tar
+              tar \
+              boost \
+              llvm \
+              clang \
+              sdl3 \
+              sdl3_image \
+              sdl2-compat \
+              sdl2_image \
+              expat \
+              gtk3 \
+              libglvnd \
+              mesa \
+              python \
+              freeglut \
+              libjpeg-turbo \
+              libpng \
+              libvorbis \
+              libxmu \
+              openal \
+              libarchive \
+              hidapi \
+              libgl \
+              libusb \
+              ninja \
+              wayland \
+              wayland-protocols
 }
 
 function bootstrapOnEndeavourOS ()
@@ -606,7 +1033,30 @@ function bootstrapOnEndeavourOS ()
               curl \
               zip \
               unzip \
-              tar
+              tar \
+              boost \
+              llvm \
+              clang \
+              sdl2_image \
+              sdl3 \
+              expat \
+              gtk3 \
+              libglvnd \
+              mesa \
+              python \
+              freeglut \
+              libjpeg-turbo \
+              libpng \
+              libvorbis \
+              libxmu \
+              openal \
+              libarchive \
+              hidapi \
+              libgl \
+              libusb \
+              ninja \
+              wayland \
+              wayland-protocols
 }
 
 case "${LINUX_ID}" in
