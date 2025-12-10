@@ -78,7 +78,24 @@ function bootstrapOnDebian()
                             curl \
                             zip \
                             unzip \
-                            tar
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev
             ;;
         "bullseye"|"buster"|"stretch")
             echo "Sorry, Debian ${LINUX_CODENAME} is no longer supported"
@@ -117,7 +134,24 @@ function bootstrapOnUbuntu()
                             curl \
                             zip \
                             unzip \
-                            tar
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev
             ;;
         "jammy"|"hirsute"|"impish"|"focal"|"bionic"|"xenial")
             echo "Sorry, Ubuntu ${LINUX_CODENAME} is no longer supported"
@@ -157,7 +191,24 @@ function bootstrapOnLinuxMint ()
                             curl \
                             zip \
                             unzip \
-                            tar
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev
             ;;
         "virginia"|"victoria"|"vera"|"vanessa"|"ulyana")
             echo "Sorry, Linux Mint ${LINUX_CODENAME} is no longer supported"
@@ -177,7 +228,7 @@ function bootstrapOnOpenSuseLeap ()
             echo "Sorry, openSUSE Leap ${LINUX_VERSION_ID} is no longer supported"
             exit 2
             ;;
-        "15.6"|"16.0")
+        "15.6")
             zypper --non-interactive refresh
             zypper --non-interactive install -y \
                                     cmake \
@@ -191,7 +242,50 @@ function bootstrapOnOpenSuseLeap ()
                                     curl \
                                     zip \
                                     unzip \
-                                    tar
+                                    tar \
+                                    libX11-devel \
+                                    xextproto-devel \
+                                    libXfixes-devel \
+                                    libXi-devel \
+                                    libXmu-devel \
+                                    libXrandr-devel \
+                                    libXss-devel \
+                                    libXtst-devel \
+                                    wayland-devel \
+                                    libxkbcommon-devel \
+                                    wayland-protocols-devel \
+                                    ibus-devel \
+                                    python3-Jinja2 \
+                                    libX11-devel
+            ;;
+        "16.0")
+            zypper --non-interactive refresh
+            zypper --non-interactive install -y \
+                                    cmake \
+                                    gcc-c++ \
+                                    git \
+                                    rpm-build \
+                                    autoconf \
+                                    autoconf-archive \
+                                    automake \
+                                    libtool \
+                                    curl \
+                                    zip \
+                                    unzip \
+                                    tar \
+                                    libX11-devel \
+                                    xorgproto-devel \
+                                    libXfixes-devel \
+                                    libXi-devel \
+                                    libXmu-devel \
+                                    libXrandr-devel \
+                                    libXss-devel \
+                                    libXtst-devel \
+                                    wayland-devel \
+                                    libxkbcommon-devel \
+                                    wayland-protocols-devel \
+                                    ibus-devel \
+                                    python313-Jinja2
             ;;
         *)
             echo "Sorry, this version of openSUSE Leap is unsupported"
@@ -227,7 +321,19 @@ function bootstrapOnFedora ()
                                 unzip \
                                 tar \
                                 kernel-headers \
-                                perl
+                                perl \
+                                libX11-devel \
+                                xorg-x11-proto-devel \
+                                libXfixes-devel \
+                                libXi-devel \
+                                libXmu-devel \
+                                libXrandr-devel \
+                                libXtst-devel \
+                                wayland-devel \
+                                libxkbcommon-devel \
+                                wayland-protocols-devel \
+                                ibus-devel \
+                                python3-jinja2
             ;;
         *)
             echo "Sorry, this version of Fedora is unsupported"
@@ -264,7 +370,19 @@ function bootstrapOnRedHat ()
                                 unzip \
                                 tar \
                                 kernel-headers \
-                                perl
+                                perl \
+                                libX11-devel \
+                                xorg-x11-proto-devel \
+                                libXfixes-devel \
+                                libXi-devel \
+                                libXmu-devel \
+                                libXrandr-devel \
+                                libXtst-devel \
+                                wayland-devel \
+                                libxkbcommon-devel \
+                                wayland-protocols-devel \
+                                ibus-devel \
+                                python3-jinja2
             ;;
         "10.0"|"10.1")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
@@ -291,7 +409,19 @@ function bootstrapOnRedHat ()
                                 unzip \
                                 tar \
                                 kernel-headers \
-                                perl
+                                perl \
+                                libX11-devel \
+                                xorg-x11-proto-devel \
+                                libXfixes-devel \
+                                libXi-devel \
+                                libXmu-devel \
+                                libXrandr-devel \
+                                libXtst-devel \
+                                wayland-devel \
+                                libxkbcommon-devel \
+                                wayland-protocols-devel \
+                                ibus-devel \
+                                python3-jinja2
             ;;
         *)
             echo "Sorry, this version of Red Hat is unsupported"
@@ -328,7 +458,19 @@ function bootstrapOnRockyLinux ()
                                 unzip \
                                 tar \
                                 kernel-headers \
-                                perl
+                                perl \
+                                libX11-devel \
+                                xorg-x11-proto-devel \
+                                libXfixes-devel \
+                                libXi-devel \
+                                libXmu-devel \
+                                libXrandr-devel \
+                                libXtst-devel \
+                                wayland-devel \
+                                libxkbcommon-devel \
+                                wayland-protocols-devel \
+                                ibus-devel \
+                                python3-jinja2
             ;;
         "10.0"|"10.1")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
@@ -355,7 +497,19 @@ function bootstrapOnRockyLinux ()
                                 unzip \
                                 tar \
                                 kernel-headers \
-                                perl
+                                perl \
+                                libX11-devel \
+                                xorg-x11-proto-devel \
+                                libXfixes-devel \
+                                libXi-devel \
+                                libXmu-devel \
+                                libXrandr-devel \
+                                libXtst-devel \
+                                wayland-devel \
+                                libxkbcommon-devel \
+                                wayland-protocols-devel \
+                                ibus-devel \
+                                python3-jinja2
             ;;
         *)
             echo "Sorry, this version of Rocky Linux is unsupported"
@@ -499,5 +653,17 @@ case "${LINUX_ID}" in
 esac
 
 mkdir -p /usr/local/src/Vega-Strike-Engine-Source
+
+if [ -z "$VCPKG_ROOT" ]
+then
+    export VCPKG_ROOT="$(pwd)/../vcpkg"
+fi
+
+git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
+export PATH="$VCPKG_ROOT:$PATH"
+
+pushd "$VCPKG_ROOT"
+./bootstrap-vcpkg.sh
+popd
 
 echo "Bootstrapping finished!"
