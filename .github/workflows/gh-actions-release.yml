@@ -32,7 +32,6 @@ jobs:
           - 'opensuse/leap:15.6'
           - 'fedora:43'
           - 'fedora:42'
-          - 'fedora:41'
           - 'rockylinux/rockylinux:10.1'
           - 'rockylinux/rockylinux:10.0'
           - 'rockylinux/rockylinux:9.6'
