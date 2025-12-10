@@ -189,7 +189,6 @@ function bootstrapOnDebian()
                             libboost-json1.81-dev \
                             libboost-program-options1.81-dev \
                             clang \
-                            opentelemetry-cpp-dev \
                             libprotobuf-dev \
                             libaudio-dev \
                             libfribidi-dev
@@ -337,7 +336,6 @@ function bootstrapOnUbuntu()
                             libboost-json-dev \
                             libboost-program-options-dev \
                             clang \
-                            opentelemetry-cpp-dev \
                             libprotobuf-dev \
                             libaudio-dev \
                             libfribidi-dev
@@ -421,7 +419,6 @@ function bootstrapOnLinuxMint ()
                             libboost-json-dev \
                             libboost-program-options-dev \
                             clang \
-                            opentelemetry-cpp-dev \
                             libprotobuf-dev \
                             libaudio-dev \
                             libfribidi-dev
@@ -650,7 +647,7 @@ function bootstrapOnRedHat ()
                                 autoconf-archive \
                                 automake \
                                 libtool \
-                                curl \
+                                curl-minimal \
                                 zip \
                                 unzip \
                                 tar \
@@ -773,7 +770,7 @@ function bootstrapOnRockyLinux ()
                                 autoconf-archive \
                                 automake \
                                 libtool \
-                                curl \
+                                curl-minimal \
                                 zip \
                                 unzip \
                                 tar \
