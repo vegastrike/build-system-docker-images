@@ -564,64 +564,64 @@ function bootstrapOnOpenSuseLeap ()
 
 function bootstrapOnFedora ()
 {
-    case "${LINUX_VERSION_ID}" in
-        30|31|32|33|34|35|36|37|38|39|40|41)
-            echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
-            exit 2
-            ;;
-        42|43)
-            if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-            then
-                dnf -y upgrade --refresh
-            fi
-            dnf install -y \
-                                git \
-                                cmake \
-                                gcc-c++ \
-                                rpm-build \
-                                make \
-                                autoconf \
-                                autoconf-archive \
-                                automake \
-                                libtool \
-                                curl \
-                                zip \
-                                unzip \
-                                tar \
-                                kernel-headers \
-                                perl \
-                                libX11-devel \
-                                xorg-x11-proto-devel \
-                                libXfixes-devel \
-                                libXi-devel \
-                                libXmu-devel \
-                                libXrandr-devel \
-                                libXtst-devel \
-                                wayland-devel \
-                                libxkbcommon-devel \
-                                wayland-protocols-devel \
-                                ibus-devel \
-                                python3-jinja2 \
-                                boost-devel \
-                                freeglut-devel \
-                                openal-soft-devel \
-                                libvorbis-devel \
-                                libglvnd-devel \
-                                libjpeg-turbo-devel \
-                                libpng-devel \
-                                expat-devel \
-                                gtk3-devel \
-                                python3-devel \
-                                libarchive-devel \
-                                rpm-build \
-                                clang \
-                                fribidi-devel
-            ;;
-        *)
-            echo "Sorry, this version of Fedora is unsupported"
-            exit 2
-            ;;
-    esac
+    export fedoraVersion=${LINUX_VERSION_ID}
+    export fedoraMaxSupportedVersion=43
+    export fedoraMinSupportedVersion=42
+    if [ ${fedoraVersion} -gt ${fedoraMaxSupportedVersion} ]
+    then
+        echo "Fedora Version ${fedoraVersion} is not yet supported. Pull requests welcome"
+    elif [ ${fedoraVersion} -ge ${fedoraMinSupportedVersion} ]
+    then
+        if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+        then
+            dnf -y upgrade --refresh
+        fi
+        dnf install -y \
+                            git \
+                            cmake \
+                            gcc-c++ \
+                            rpm-build \
+                            make \
+                            autoconf \
+                            autoconf-archive \
+                            automake \
+                            libtool \
+                            curl \
+                            zip \
+                            unzip \
+                            tar \
+                            kernel-headers \
+                            perl \
+                            libX11-devel \
+                            xorg-x11-proto-devel \
+                            libXfixes-devel \
+                            libXi-devel \
+                            libXmu-devel \
+                            libXrandr-devel \
+                            libXtst-devel \
+                            wayland-devel \
+                            libxkbcommon-devel \
+                            wayland-protocols-devel \
+                            ibus-devel \
+                            python3-jinja2 \
+                            boost-devel \
+                            freeglut-devel \
+                            openal-soft-devel \
+                            libvorbis-devel \
+                            libglvnd-devel \
+                            libjpeg-turbo-devel \
+                            libpng-devel \
+                            expat-devel \
+                            gtk3-devel \
+                            python3-devel \
+                            libarchive-devel \
+                            rpm-build \
+                            clang \
+                            fribidi-devel
+    else
+        echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
+        exit 2
+    fi
 }
 
 function bootstrapOnRedHat ()
