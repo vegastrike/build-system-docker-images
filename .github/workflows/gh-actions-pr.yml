@@ -27,6 +27,7 @@ jobs:
           - 'fedora:42'
           - 'rockylinux/rockylinux:10.1'
           - 'rockylinux/rockylinux:10.0'
+          - 'rockylinux/rockylinux:9.7'
           - 'rockylinux/rockylinux:9.6'
           - 'manjarolinux/base'
           - 'alex5402/endeavouros'
