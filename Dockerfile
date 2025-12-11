@@ -20,7 +20,7 @@
 ARG  from
 FROM ${from}
 
-WORKDIR /usr/src/build-system-docker-images
+WORKDIR /usr/local/src/build-system-docker-images
 
 COPY script/ script/
 

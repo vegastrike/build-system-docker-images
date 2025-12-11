@@ -1103,7 +1103,7 @@ mkdir -p /usr/local/src/Vega-Strike-Engine-Source
 
 if [ -z "$VCPKG_ROOT" ]
 then
-    export VCPKG_ROOT="$(pwd)/../vcpkg"
+    export VCPKG_ROOT="/usr/local/src/vcpkg"
 fi
 
 git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
