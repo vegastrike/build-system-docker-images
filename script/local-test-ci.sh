@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export FROM="rockylinux/rockylinux:10.1"
+export FROM="rockylinux/rockylinux:9.7"
 export IS_RELEASE=0
 
 #./script/cibuild
