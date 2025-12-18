@@ -28,17 +28,17 @@ jobs:
           - 'ubuntu:questing'
           - 'ubuntu:plucky'
           - 'ubuntu:noble'
-          - 'linuxmintd/mint22.2-amd64'
-          - 'linuxmintd/mint22-amd64'
+          #- 'linuxmintd/mint22.2-amd64'
+          #- 'linuxmintd/mint22-amd64'
           - 'debian:trixie'
           - 'debian:bookworm'
           - 'opensuse/leap:16.0'
           - 'opensuse/leap:15.6'
           - 'fedora:43'
           - 'fedora:42'
-          - 'fedora:41'
           - 'rockylinux/rockylinux:10.1'
           - 'rockylinux/rockylinux:10.0'
+          - 'rockylinux/rockylinux:9.7'
           - 'rockylinux/rockylinux:9.6'
           - 'manjarolinux/base'
           # - 'alex5402/endeavouros'
@@ -79,7 +79,7 @@ jobs:
         uses: anchore/scan-action@3c9a191a0fbab285ca6b8530b5de5a642cba332f #v7.2.2
         id: scan
         with:
-          image: "localbuild/${{ matrix.FROM }}"
+          image: "image:localbuild/${{ matrix.FROM }}"
           fail-build: false
           severity-cutoff: critical
 
