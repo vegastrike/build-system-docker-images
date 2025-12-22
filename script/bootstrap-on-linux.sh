@@ -1044,6 +1044,8 @@ function bootstrapOnArch ()
 
 function bootstrapOnEndeavourOS ()
 {
+    pacman -Sy --noconfirm archlinux-keyring
+
     if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
     then
         pacman -Syyu --refresh --noconfirm
