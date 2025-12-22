@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2025-12-11 ---"
+echo "--- bootstrap-on-linux.sh | 2025-12-21 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -1136,20 +1136,5 @@ case "${LINUX_ID}" in
 esac
 
 mkdir -p /usr/local/src/Vega-Strike-Engine-Source
-
-if [ -z "$VCPKG_ROOT" ]
-then
-    export VCPKG_ROOT="/usr/local/src/vcpkg"
-fi
-
-if [ ! -d "$VCPKG_ROOT" ]
-then
-    git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
-fi
-export PATH="$VCPKG_ROOT:$PATH"
-
-pushd "$VCPKG_ROOT"
-./bootstrap-vcpkg.sh
-popd
 
 echo "Bootstrapping finished!"
