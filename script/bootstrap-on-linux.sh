@@ -134,6 +134,7 @@ function bootstrapOnDebian()
             apt-get -qy remove \
                             libboost-python-dev \
                             libboost-log-dev \
+                            libboost-program-options-dev \
                             libboost-regex-dev
             apt-get -qy autoremove
             apt-get -qy install \
