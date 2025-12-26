@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2025-12-22 ---"
+echo "--- bootstrap-on-linux.sh | 2025-12-26 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -596,6 +596,16 @@ function bootstrapOnFedora ()
         echo "Fedora Version ${fedoraVersion} is not yet supported. Pull requests welcome"
     elif [ ${fedoraVersion} -ge ${fedoraMinSupportedVersion} ]
     then
+        declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
+        for pkg in "${pkgs_to_uninstall[@]}"
+        do
+            if dnf list installed | grep -qF "$pkg"; then
+                dnf -y remove "$pkg"
+            else
+                echo "Package '$pkg' is not installed."
+            fi
+        done
+
         if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
         then
             dnf -y upgrade --refresh
@@ -643,6 +653,10 @@ function bootstrapOnFedora ()
                             clang \
                             fribidi-devel \
                             mesa-libGLU-devel \
+                            SDL3-devel \
+                            SDL3_image-devel \
+                            sdl2-compat-devel \
+                            SDL2_image-devel \
                             libtool-ltdl-devel
     else
         echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
@@ -712,6 +726,16 @@ function bootstrapOnRedHat ()
                                 libtool-ltdl-devel
             ;;
         "10.0"|"10.1")
+            declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
+            for pkg in "${pkgs_to_uninstall[@]}"
+            do
+                if dnf list installed | grep -qF "$pkg"; then
+                    dnf -y remove "$pkg"
+                else
+                    echo "Package '$pkg' is not installed."
+                fi
+            done
+
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
@@ -839,6 +863,16 @@ function bootstrapOnRockyLinux ()
                                 libtool-ltdl-devel
             ;;
         "10.0"|"10.1")
+            declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
+            for pkg in "${pkgs_to_uninstall[@]}"
+            do
+                if dnf list installed | grep -qF "$pkg"; then
+                    dnf -y remove "$pkg"
+                else
+                    echo "Package '$pkg' is not installed."
+                fi
+            done
+
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
