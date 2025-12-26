@@ -843,6 +843,16 @@ function bootstrapOnRockyLinux ()
                                 libtool-ltdl-devel
             ;;
         "10.0"|"10.1")
+            declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
+            for pkg in "${pkgs_to_uninstall[@]}"
+            do
+                if dnf list installed | grep -qF "$pkg"; then
+                    dnf -y remove "$pkg"
+                else
+                    echo "Package '$pkg' is not installed."
+                fi
+            done
+
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
