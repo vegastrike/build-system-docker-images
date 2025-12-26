@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2025-12-22 ---"
+echo "--- bootstrap-on-linux.sh | 2025-12-26 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -643,6 +643,10 @@ function bootstrapOnFedora ()
                             clang \
                             fribidi-devel \
                             mesa-libGLU-devel \
+                            SDL3-devel \
+                            SDL3_image-devel \
+                            sdl2-compat-devel \
+                            SDL2_image-devel \
                             libtool-ltdl-devel
     else
         echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
