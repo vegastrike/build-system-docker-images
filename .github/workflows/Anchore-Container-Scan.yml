@@ -42,6 +42,7 @@ jobs:
           - 'rockylinux/rockylinux:9.6'
           - 'manjarolinux/base'
           - 'dhi.io/python:3.14.3-debian13-dev'
+          - 'dhi.io/python:3.14-debian13-dev'
           - 'dhi.io/python:3.13.12-debian13-dev'
           - 'dhi.io/python:3.13-debian13-dev'
           # - 'alex5402/endeavouros'

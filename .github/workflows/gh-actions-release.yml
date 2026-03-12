@@ -38,6 +38,7 @@ jobs:
           - 'manjarolinux/base'
           - 'alex5402/endeavouros'
           - 'dhi.io/python:3.14.3-debian13-dev'
+          - 'dhi.io/python:3.14-debian13-dev'
           - 'dhi.io/python:3.13.12-debian13-dev'
           - 'dhi.io/python:3.13-debian13-dev'
           #- 'funtoo/stage3-generic_64'
