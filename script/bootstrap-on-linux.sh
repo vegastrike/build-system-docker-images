@@ -9,7 +9,7 @@
 # @param  : just one parameter, either a 1 or a 0, to indicate whether or not to
 #           UPDATE_ALL_SYSTEM_PACKAGES
 #====================================
-# Copyright (C) 2020-2025 Roy Falk, Stephen G. Tuggy, Benjamen R. Meyer,
+# Copyright (C) 2020-2026 Roy Falk, Stephen G. Tuggy, Benjamen R. Meyer,
 # and other Vega Strike contributors
 #
 # This file is part of Vega Strike.
@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2025-12-26 ---"
+echo "--- bootstrap-on-linux.sh | 2026-05-02 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -371,7 +371,72 @@ function bootstrapOnLinuxMint ()
 
     echo "Linux Mint base Distros do NOT support SDL3"
     case "$LINUX_CODENAME" in
-        "wilma"|"zara"|"zena"|"alfa")
+        "alfa")
+            apt-get -qy install \
+                            git \
+                            cmake \
+                            build-essential \
+                            lsb-release \
+                            make \
+                            pkg-config \
+                            ninja-build \
+                            autoconf \
+                            autoconf-archive \
+                            automake \
+                            libtool \
+                            curl \
+                            zip \
+                            unzip \
+                            tar \
+                            libx11-dev \
+                            libxext-dev \
+                            libxfixes-dev \
+                            libxi-dev \
+                            libxmu-dev \
+                            libxrandr-dev \
+                            libxss-dev \
+                            libxtst-dev \
+                            libwayland-dev \
+                            libxkbcommon-dev \
+                            wayland-protocols \
+                            libibus-1.0-dev \
+                            python3-jinja2 \
+                            libx11-xcb-dev \
+                            libxcb-dpms0-dev \
+                            libxxf86vm-dev \
+                            libxcb-xv0-dev \
+                            python3-dev \
+                            libarchive-dev \
+                            libpng16-16 \
+                            libpng-dev \
+                            libpng-tools \
+                            libjpeg-turbo8-dev \
+                            libexpat1-dev \
+                            libgtk-3-dev \
+                            libopenal-dev \
+                            libogg-dev \
+                            libvorbis-dev \
+                            libglvnd-dev \
+                            libgl1-mesa-dev \
+                            libsdl3-dev \
+                            libsdl3-image-dev \
+                            libsdl2-dev \
+                            libsdl2-image-dev \
+                            freeglut3-dev \
+                            libboost-python-dev \
+                            libboost-log-dev \
+                            libboost-regex-dev \
+                            libboost-json-dev \
+                            libboost-program-options-dev \
+                            clang \
+                            libprotobuf-dev \
+                            libaudio-dev \
+                            libfribidi-dev \
+                            libglu1-mesa-dev \
+                            mesa-common-dev \
+                            libltdl-dev
+            ;;
+        "wilma"|"zara"|"zena")
             apt-get -qy install \
                             git \
                             cmake \
@@ -555,8 +620,10 @@ function bootstrapOnOpenSuseLeap ()
                                     freeglut-devel \
                                     libopenal0 \
                                     openal-soft-devel \
-                                    libSDL2-devel \
-                                    libSDL2_image-devel \
+                                    SDL3-devel \
+                                    SDL3_image-devel \
+                                    SDL2-devel \
+                                    SDL2_image-devel \
                                     libvorbis-devel \
                                     libglvnd-devel \
                                     libjpeg-turbo \
@@ -567,7 +634,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libexpat-devel \
                                     libgtk-3-0 \
                                     gtk3-devel \
-                                    python3-devel \
+                                    python313-devel \
                                     clang \
                                     glu-devel \
                                     Mesa-devel \
@@ -958,6 +1025,7 @@ function bootstrapOnManjaro ()
                          tar \
                          boost \
                          sdl3 \
+                         sdl3_image \
                          sdl2-compat \
                          sdl2_image \
                          expat \
@@ -1103,6 +1171,7 @@ function bootstrapOnEndeavourOS ()
               clang \
               sdl2_image \
               sdl3 \
+              sdl3_image \
               expat \
               gtk3 \
               libglvnd \
@@ -1140,10 +1209,7 @@ case "${LINUX_ID}" in
     "fedora")
         bootstrapOnFedora
         ;;
-    "rhel")
-        bootstrapOnRedHat
-        ;;
-    "redhat")
+    "rhel"|"redhat")
         bootstrapOnRedHat
         ;;
     "rocky")
