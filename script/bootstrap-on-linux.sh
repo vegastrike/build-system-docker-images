@@ -798,10 +798,6 @@ function bootstrapOnRedHat ()
                 fi
             done
 
-            if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-            then
-                dnf -y upgrade --refresh
-            fi
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
             dnf -y config-manager --set-enabled devel
@@ -935,10 +931,6 @@ function bootstrapOnRockyLinux ()
                 fi
             done
 
-            if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-            then
-                dnf -y upgrade --refresh
-            fi
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
             dnf -y config-manager --set-enabled devel
