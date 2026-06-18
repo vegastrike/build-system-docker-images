@@ -729,7 +729,7 @@ function bootstrapOnFedora ()
 function bootstrapOnRedHat ()
 {
     case "${LINUX_VERSION_ID}" in
-        "9.6"|"9.7")
+        "9.6"|"9.7"|"9.8")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
@@ -866,7 +866,7 @@ function bootstrapOnRedHat ()
 function bootstrapOnRockyLinux ()
 {
     case "${LINUX_VERSION_ID}" in
-        "9.6"|"9.7")
+        "9.6"|"9.7"|"9.8")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
