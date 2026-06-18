@@ -24,4 +24,4 @@ WORKDIR /usr/local/src/build-system-docker-images
 
 COPY script/ script/
 
-RUN DEBIAN_FRONTEND=noninteractive script/bootstrap 0
+RUN DEBIAN_FRONTEND=noninteractive script/bootstrap 1
