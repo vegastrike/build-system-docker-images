@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-05-02 ---"
+echo "--- bootstrap-on-linux.sh | 2026-06-18 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
