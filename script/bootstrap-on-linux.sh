@@ -787,7 +787,7 @@ function bootstrapOnRedHat ()
                                 mesa-libGLU-devel \
                                 libtool-ltdl-devel
             ;;
-        "10.0"|"10.1")
+        "10.0"|"10.1"|"10.2")
             declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
             for pkg in "${pkgs_to_uninstall[@]}"
             do
@@ -924,7 +924,7 @@ function bootstrapOnRockyLinux ()
                                 mesa-libGLU-devel \
                                 libtool-ltdl-devel
             ;;
-        "10.0"|"10.1")
+        "10.0"|"10.1"|"10.2")
             declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
             for pkg in "${pkgs_to_uninstall[@]}"
             do
