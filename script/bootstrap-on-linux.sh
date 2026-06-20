@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-05-02 ---"
+echo "--- bootstrap-on-linux.sh | 2026-06-18 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -729,7 +729,7 @@ function bootstrapOnFedora ()
 function bootstrapOnRedHat ()
 {
     case "${LINUX_VERSION_ID}" in
-        "9.6"|"9.7")
+        "9.6"|"9.7"|"9.8")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
@@ -787,7 +787,7 @@ function bootstrapOnRedHat ()
                                 mesa-libGLU-devel \
                                 libtool-ltdl-devel
             ;;
-        "10.0"|"10.1")
+        "10.0"|"10.1"|"10.2")
             declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
             for pkg in "${pkgs_to_uninstall[@]}"
             do
@@ -798,10 +798,6 @@ function bootstrapOnRedHat ()
                 fi
             done
 
-            if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-            then
-                dnf -y upgrade --refresh
-            fi
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
             dnf -y config-manager --set-enabled devel
@@ -866,7 +862,7 @@ function bootstrapOnRedHat ()
 function bootstrapOnRockyLinux ()
 {
     case "${LINUX_VERSION_ID}" in
-        "9.6"|"9.7")
+        "9.6"|"9.7"|"9.8")
             if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
             then
                 dnf -y upgrade --refresh
@@ -924,7 +920,7 @@ function bootstrapOnRockyLinux ()
                                 mesa-libGLU-devel \
                                 libtool-ltdl-devel
             ;;
-        "10.0"|"10.1")
+        "10.0"|"10.1"|"10.2")
             declare -a pkgs_to_uninstall=('SDL2-devel' 'SDL2')
             for pkg in "${pkgs_to_uninstall[@]}"
             do
@@ -935,10 +931,6 @@ function bootstrapOnRockyLinux ()
                 fi
             done
 
-            if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-            then
-                dnf -y upgrade --refresh
-            fi
             dnf -y install 'dnf-command(config-manager)'
             dnf -y config-manager --set-enabled crb
             dnf -y config-manager --set-enabled devel
