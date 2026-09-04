@@ -651,7 +651,7 @@ function bootstrapOnOpenSuseLeap ()
 function bootstrapOnFedora ()
 {
     export fedoraVersion=${LINUX_VERSION_ID}
-    export fedoraMaxSupportedVersion=44
+    export fedoraMaxSupportedVersion=45
     export fedoraMinSupportedVersion=42
     if [ ${fedoraVersion} -gt ${fedoraMaxSupportedVersion} ]
     then
