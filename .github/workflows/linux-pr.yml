@@ -41,6 +41,7 @@ jobs:
           - 'dhi.io/python:3.14-debian13-sfw-dev'
           - 'dhi.io/python:3.13-debian13-dev'
           - 'dhi.io/python:3.13-debian13-sfw-dev'
+          - 'cachyos/cachyos:latest'
           # - 'funtoo/stage3-generic_64'
 
     steps:
