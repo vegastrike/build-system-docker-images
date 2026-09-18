@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-06-18 ---"
+echo "--- bootstrap-on-linux.sh | 2026-09-17 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -1185,6 +1185,57 @@ function bootstrapOnEndeavourOS ()
               glu
 }
 
+function bootstrapOnCachyOS ()
+{
+#    pacman -Sy --noconfirm archlinux-keyring
+
+    if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+    then
+        pacman -Syyu --refresh --noconfirm
+    fi
+
+    pacman -Sy --noconfirm \
+              base-devel \
+              cmake \
+              gcc \
+              git \
+              make \
+              autoconf \
+              autoconf-archive \
+              automake \
+              libtool \
+              curl \
+              zip \
+              unzip \
+              tar \
+              boost \
+              llvm \
+              clang \
+              sdl3 \
+              sdl3_image \
+              sdl2-compat \
+              sdl2_image \
+              expat \
+              gtk3 \
+              libglvnd \
+              mesa \
+              python \
+              freeglut \
+              libjpeg-turbo \
+              libpng \
+              libvorbis \
+              libxmu \
+              openal \
+              libarchive \
+              hidapi \
+              libgl \
+              libusb \
+              ninja \
+              wayland \
+              wayland-protocols \
+              glu
+}
+
 case "${LINUX_ID}" in
     "debian")
         bootstrapOnDebian
@@ -1218,6 +1269,9 @@ case "${LINUX_ID}" in
         ;;
     "endeavouros")
         bootstrapOnEndeavourOS
+        ;;
+    "cachyos")
+        bootstrapOnCachyOS
         ;;
     *)
         echo "Sorry, unrecognized/unsupported Linux distribution"
