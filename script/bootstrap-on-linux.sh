@@ -911,58 +911,6 @@ function bootstrapOnRockyLinux() {
   esac
 }
 
-function bootstrapOnManjaro() {
-  pacman -Syu --needed --noconfirm archlinux-keyring manjaro-keyring
-
-  if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]; then
-    pacman -Syyu --refresh --noconfirm
-  fi
-
-  pacman -Syu --needed --noconfirm base-devel
-  pacman -Syu --needed --noconfirm cmake \
-    gcc \
-    gcc-libs \
-    git \
-    make \
-    autoconf \
-    autoconf-archive \
-    automake \
-    libtool \
-    curl \
-    zip \
-    unzip \
-    tar \
-    boost \
-    sdl3 \
-    sdl3_image \
-    sdl2-compat \
-    sdl2_image \
-    expat \
-    gtk3 \
-    libglvnd \
-    mesa \
-    python \
-    freeglut \
-    libjpeg-turbo \
-    libpng \
-    libvorbis \
-    libxmu \
-    openal \
-    libarchive \
-    yay \
-    hidapi \
-    libgl \
-    libusb \
-    ninja \
-    wayland \
-    wayland-protocols \
-    glu
-
-  # NOTE: `yay` requires SystemD which isn't available in Docker
-  # AUR related packages that are not in pacman by default
-  # yay -S --noconfirm sdl3_image
-}
-
 function bootstrapOnFuntoo() {
   ego sync
   dispatch-conf
@@ -1044,6 +992,58 @@ function bootstrapOnArch() {
     wayland \
     wayland-protocols \
     glu
+}
+
+function bootstrapOnManjaro() {
+  pacman -Syu --needed --noconfirm archlinux-keyring manjaro-keyring
+
+  if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]; then
+    pacman -Syyu --refresh --noconfirm
+  fi
+
+  pacman -Syu --needed --noconfirm base-devel
+  pacman -Syu --needed --noconfirm cmake \
+    gcc \
+    gcc-libs \
+    git \
+    make \
+    autoconf \
+    autoconf-archive \
+    automake \
+    libtool \
+    curl \
+    zip \
+    unzip \
+    tar \
+    boost \
+    sdl3 \
+    sdl3_image \
+    sdl2-compat \
+    sdl2_image \
+    expat \
+    gtk3 \
+    libglvnd \
+    mesa \
+    python \
+    freeglut \
+    libjpeg-turbo \
+    libpng \
+    libvorbis \
+    libxmu \
+    openal \
+    libarchive \
+    yay \
+    hidapi \
+    libgl \
+    libusb \
+    ninja \
+    wayland \
+    wayland-protocols \
+    glu
+
+  # NOTE: `yay` requires SystemD which isn't available in Docker
+  # AUR related packages that are not in pacman by default
+  # yay -S --noconfirm sdl3_image
 }
 
 function bootstrapOnEndeavourOS() {
@@ -1168,14 +1168,14 @@ case "${LINUX_ID}" in
   "rocky")
     bootstrapOnRockyLinux
     ;;
-  "manjaro")
-    bootstrapOnManjaro
-    ;;
   "funtoo")
     bootstrapOnFuntoo
     ;;
   "arch")
     bootstrapOnArch
+    ;;
+  "manjaro")
+    bootstrapOnManjaro
     ;;
   "endeavouros")
     bootstrapOnEndeavourOS
