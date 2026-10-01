@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-09-17 ---"
+echo "--- bootstrap-on-linux.sh | 2026-10-01 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -369,7 +369,6 @@ function bootstrapOnLinuxMint ()
         apt-get -qy upgrade
     fi
 
-    echo "Linux Mint base Distros do NOT support SDL3"
     case "$LINUX_CODENAME" in
         "alfa")
             apt-get -qy install \
@@ -437,6 +436,7 @@ function bootstrapOnLinuxMint ()
                             libltdl-dev
             ;;
         "wilma"|"zara"|"zena")
+            echo "Linux Mint version '${LINUX_CODENAME}' does NOT support SDL3"
             apt-get -qy install \
                             git \
                             cmake \
@@ -513,70 +513,9 @@ function bootstrapOnLinuxMint ()
 function bootstrapOnOpenSuseLeap ()
 {
     case "${LINUX_VERSION_ID}" in
-        "15.1"|"15.2"|"15.3"|"15.4"|"15.5")
+        "15.1"|"15.2"|"15.3"|"15.4"|"15.5"|"15.6")
             echo "Sorry, openSUSE Leap ${LINUX_VERSION_ID} is no longer supported"
             exit 2
-            ;;
-        "15.6")
-            zypper --non-interactive refresh
-            zypper --non-interactive install -y \
-                                    cmake \
-                                    gcc-c++ \
-                                    git \
-                                    rpm-build \
-                                    autoconf \
-                                    autoconf-archive \
-                                    automake \
-                                    libtool \
-                                    curl \
-                                    zip \
-                                    unzip \
-                                    tar \
-                                    libX11-devel \
-                                    xextproto-devel \
-                                    libXfixes-devel \
-                                    libXi-devel \
-                                    libXmu-devel \
-                                    libXrandr-devel \
-                                    libXss-devel \
-                                    libXtst-devel \
-                                    wayland-devel \
-                                    libxkbcommon-devel \
-                                    wayland-protocols-devel \
-                                    ibus-devel \
-                                    python3-Jinja2 \
-                                    libboost_log1_75_0-devel \
-                                    libboost_python-py3-1_75_0-devel \
-                                    libboost_system1_75_0-devel \
-                                    libboost_filesystem1_75_0-devel \
-                                    libboost_thread1_75_0-devel \
-                                    libboost_regex1_75_0-devel \
-                                    libboost_chrono1_75_0-devel \
-                                    libboost_atomic1_75_0-devel \
-                                    libboost_json1_75_0-devel \
-                                    libboost_container1_75_0-devel \
-                                    libboost_program_options1_75_0-devel \
-                                    freeglut-devel \
-                                    libopenal0 \
-                                    openal-soft-devel \
-                                    libSDL2-devel \
-                                    libSDL2_image-devel \
-                                    libvorbis-devel \
-                                    libglvnd-devel \
-                                    libjpeg-turbo \
-                                    libjpeg62-devel \
-                                    libpng16-devel \
-                                    libarchive-devel \
-                                    expat \
-                                    libexpat-devel \
-                                    libgtk-3-0 \
-                                    gtk3-devel \
-                                    python3-devel \
-                                    clang \
-                                    glu-devel \
-                                    Mesa-devel \
-                                    libtool \
-                                    libltdl7
             ;;
         "16.0")
             zypper --non-interactive refresh
@@ -652,7 +591,7 @@ function bootstrapOnFedora ()
 {
     export fedoraVersion=${LINUX_VERSION_ID}
     export fedoraMaxSupportedVersion=45
-    export fedoraMinSupportedVersion=42
+    export fedoraMinSupportedVersion=43
     if [ ${fedoraVersion} -gt ${fedoraMaxSupportedVersion} ]
     then
         echo "Fedora Version ${fedoraVersion} is not yet supported. Pull requests welcome"
@@ -994,56 +933,56 @@ function bootstrapOnRockyLinux ()
 
 function bootstrapOnManjaro ()
 {
-        pacman -Sy --noconfirm archlinux-keyring manjaro-keyring
+    pacman -Syu --needed --noconfirm archlinux-keyring manjaro-keyring
 
-        if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
-        then
-            pacman -Syyu --refresh --noconfirm
-        fi
+    if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
+    then
+        pacman -Syyu --refresh --noconfirm
+    fi
 
-        pacman -Sy --noconfirm base-devel --needed
-        pacman -Sy --noconfirm cmake \
-                         gcc \
-                         gcc-libs \
-                         git \
-                         make \
-                         autoconf \
-                         autoconf-archive \
-                         automake \
-                         libtool \
-                         curl \
-                         zip \
-                         unzip \
-                         tar \
-                         boost \
-                         sdl3 \
-                         sdl3_image \
-                         sdl2-compat \
-                         sdl2_image \
-                         expat \
-                         gtk3 \
-                         libglvnd \
-                         mesa \
-                         python \
-                         freeglut \
-                         libjpeg-turbo \
-                         libpng \
-                         libvorbis \
-                         libxmu \
-                         openal \
-                         libarchive \
-                         yay \
-                         hidapi \
-                         libgl \
-                         libusb \
-                         ninja \
-                         wayland \
-                         wayland-protocols \
-                         glu
+    pacman -Syu --needed --noconfirm base-devel
+    pacman -Syu --needed --noconfirm cmake \
+                     gcc \
+                     gcc-libs \
+                     git \
+                     make \
+                     autoconf \
+                     autoconf-archive \
+                     automake \
+                     libtool \
+                     curl \
+                     zip \
+                     unzip \
+                     tar \
+                     boost \
+                     sdl3 \
+                     sdl3_image \
+                     sdl2-compat \
+                     sdl2_image \
+                     expat \
+                     gtk3 \
+                     libglvnd \
+                     mesa \
+                     python \
+                     freeglut \
+                     libjpeg-turbo \
+                     libpng \
+                     libvorbis \
+                     libxmu \
+                     openal \
+                     libarchive \
+                     yay \
+                     hidapi \
+                     libgl \
+                     libusb \
+                     ninja \
+                     wayland \
+                     wayland-protocols \
+                     glu
 
-        # NOTE: `yay` requires SystemD which isn't available in Docker
-        # AUR related packages that are not in pacman by default
-        # yay -S --noconfirm sdl3_image
+    # NOTE: `yay` requires SystemD which isn't available in Docker
+    # AUR related packages that are not in pacman by default
+    # yay -S --noconfirm sdl3_image
 }
 
 function bootstrapOnFuntoo ()
@@ -1089,7 +1028,7 @@ function bootstrapOnArch ()
 
     # NOTE: Arch requires GCC 12 right now
     # also installing latest GCC.
-    pacman -Sy --noconfirm \
+    pacman -Syu --needed --noconfirm \
               base-devel \
               cmake \
               gcc \
@@ -1134,7 +1073,7 @@ function bootstrapOnArch ()
 
 function bootstrapOnEndeavourOS ()
 {
-    pacman -Sy --noconfirm archlinux-keyring
+    pacman -Syu --needed --noconfirm archlinux-keyring
 
     if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
     then
@@ -1143,7 +1082,7 @@ function bootstrapOnEndeavourOS ()
 
     # NOTE: Arch requires GCC 12 right now
     # also installing latest GCC.
-    pacman -Sy --noconfirm \
+    pacman -Syu --needed --noconfirm \
               base-devel \
               icu \
               cmake \
@@ -1187,14 +1126,14 @@ function bootstrapOnEndeavourOS ()
 
 function bootstrapOnCachyOS ()
 {
-#    pacman -Sy --noconfirm archlinux-keyring
+#    pacman -Syu --needed --noconfirm archlinux-keyring
 
     if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]
     then
         pacman -Syyu --refresh --noconfirm
     fi
 
-    pacman -Sy --noconfirm \
+    pacman -Sy --needed --noconfirm \
               base-devel \
               cmake \
               gcc \
