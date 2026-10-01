@@ -993,8 +993,6 @@ function bootstrapOnEndeavourOS() {
     pacman -Syyu --refresh --noconfirm
   fi
 
-  # NOTE: Arch requires GCC 12 right now
-  # also installing latest GCC.
   pacman -Syu --needed --noconfirm \
     base-devel \
     icu \
