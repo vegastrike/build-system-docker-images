@@ -40,30 +40,30 @@ jobs:
           - 'cachyos/cachyos:latest'
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        fetch-depth: 2
-        submodules: false
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+          submodules: false
 
-    - name: Extract tag name etc
-      shell: bash
-      run: |
-        echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
+      - name: Extract tag name etc
+        shell: bash
+        run: |
+          echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
 
-    - name: Test tag name etc
-      run: |
-        echo "${TAG_NAME}"
+      - name: Test tag name etc
+        run: |
+          echo "${TAG_NAME}"
 
-    - name: Docker Login
-      uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f #v4.6.0
-      with:
-        username: "${{ secrets.DOCKER_HUB_USER }}"
-        password: "${{ secrets.DOCKER_HUB_KEY }}"
-        logout: true
+      - name: Docker Login
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f #v4.6.0
+        with:
+          username: "${{ secrets.DOCKER_HUB_USER }}"
+          password: "${{ secrets.DOCKER_HUB_KEY }}"
+          logout: true
 
-    - name: Run CI
-      env:
-        FROM:       ${{ matrix.FROM }}
-        IS_RELEASE: 1
-      run: script/cibuild
+      - name: Run CI
+        env:
+          FROM: ${{ matrix.FROM }}
+          IS_RELEASE: 1
+        run: script/cibuild
