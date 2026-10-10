@@ -67,6 +67,11 @@ function bootstrapOnDebian() {
 
   case "$LINUX_CODENAME" in
     "trixie")
+      # TEMPORARY
+      apt policy libarchive-dev
+      apt policy liblzma-dev
+      apt policy liblzma5
+
       apt-get -qy install \
         git \
         cmake \
