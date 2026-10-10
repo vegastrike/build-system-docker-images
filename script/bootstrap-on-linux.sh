@@ -67,10 +67,14 @@ function bootstrapOnDebian() {
 
   case "$LINUX_CODENAME" in
     "trixie")
-      # TEMPORARY
-      apt policy libarchive-dev
-      apt policy liblzma-dev
-      apt policy liblzma5
+      if apt-cache policy | grep -qF 'dhi.io'; then
+        echo "Apt sources:"
+        cat /etc/apt/sources.list.d/*.*
+        echo "Package: libarchive* liblzma*" | tee /etc/apt/preferences.d/dhi.pref
+        echo 'Pin: origin "http://dhi.io/deb/debian/main"' | tee --append /etc/apt/preferences.d/dhi.pref
+        echo "Pin-Priority: 1001" | tee --append /etc/apt/preferences.d/dhi.pref
+        apt-get update
+      fi
 
       apt-get -qy install \
         git \

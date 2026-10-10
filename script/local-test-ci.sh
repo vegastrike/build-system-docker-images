@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export FROM="cachyos/cachyos:latest"
+export FROM="dhi.io/python:3.14-debian13-sfw-dev"
 export IS_RELEASE=0
 
 #./script/cibuild
