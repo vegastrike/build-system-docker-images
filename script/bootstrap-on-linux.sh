@@ -38,7 +38,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-10-01 ---"
+echo "--- bootstrap-on-linux.sh | 2026-10-09 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -59,6 +59,14 @@ LINUX_VERSION_ID=$(grep ^VERSION_ID= $OS_RELEASE_LOCATION | sed 's/^VERSION_ID=/
 echo "LINUX_VERSION_ID = ${LINUX_VERSION_ID}"
 
 function bootstrapOnDebian() {
+  if apt-cache policy | grep -qF 'dhi.io'; then
+    echo "Apt sources:"
+    cat /etc/apt/sources.list.d/*.*
+    echo "Package: *" | tee /etc/apt/preferences.d/dhi.pref
+    echo 'Pin: origin "http://dhi.io/deb/debian/main"' | tee --append /etc/apt/preferences.d/dhi.pref
+    echo "Pin-Priority: 1001" | tee --append /etc/apt/preferences.d/dhi.pref
+  fi
+
   apt-get update
 
   if [ "${UPDATE_ALL_SYSTEM_PACKAGES}" -eq 1 ]; then
@@ -67,15 +75,6 @@ function bootstrapOnDebian() {
 
   case "$LINUX_CODENAME" in
     "trixie")
-      if apt-cache policy | grep -qF 'dhi.io'; then
-        echo "Apt sources:"
-        cat /etc/apt/sources.list.d/*.*
-        echo "Package: libarchive* liblzma*" | tee /etc/apt/preferences.d/dhi.pref
-        echo 'Pin: origin "http://dhi.io/deb/debian/main"' | tee --append /etc/apt/preferences.d/dhi.pref
-        echo "Pin-Priority: 1001" | tee --append /etc/apt/preferences.d/dhi.pref
-        apt-get update
-      fi
-
       apt-get -qy install \
         git \
         cmake \
@@ -220,6 +219,10 @@ function bootstrapOnDebian() {
       exit 2
       ;;
   esac
+
+  if apt-cache policy | grep -qF 'dhi.io'; then
+    /usr/bin/env python3 --version
+  fi
 }
 
 function bootstrapOnUbuntu() {
