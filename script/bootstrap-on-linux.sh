@@ -38,7 +38,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2026-10-09 ---"
+echo "--- bootstrap-on-linux.sh | 2026-10-25 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -531,6 +531,9 @@ function bootstrapOnOpenSuseLeap() {
       exit 2
       ;;
   esac
+
+  mkdir -p /usr/local/lib/python3.13/site-packages
+  mkdir -p /usr/lib/python3.13/site-packages
 }
 
 function bootstrapOnFedora() {
@@ -604,6 +607,8 @@ function bootstrapOnFedora() {
     echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
     exit 2
   fi
+
+  mkdir -p /usr/local/lib/python3.14/site-packages
 }
 
 function bootstrapOnRedHat() {
