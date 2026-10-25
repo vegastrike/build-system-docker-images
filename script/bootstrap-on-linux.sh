@@ -526,6 +526,7 @@ function bootstrapOnOpenSuseLeap() {
         libtool \
         libltdl7
 
+        # The Python site-packages directories do not get created automatically on openSUSE. Create them manually.
         mkdir -p /usr/local/lib/python3.13/site-packages
         mkdir -p /usr/lib/python3.13/site-packages
       ;;
@@ -604,6 +605,7 @@ function bootstrapOnFedora() {
       SDL2_image-devel \
       libtool-ltdl-devel
 
+      # The Python site-packages directory doesn't get created automatically on modern Fedora. Create it manually.
       mkdir -p /usr/local/lib/python3.14/site-packages
   else
     echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
