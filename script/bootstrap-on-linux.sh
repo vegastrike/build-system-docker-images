@@ -525,15 +525,15 @@ function bootstrapOnOpenSuseLeap() {
         Mesa-devel \
         libtool \
         libltdl7
+
+        mkdir -p /usr/local/lib/python3.13/site-packages
+        mkdir -p /usr/lib/python3.13/site-packages
       ;;
     *)
       echo "Sorry, this version of openSUSE Leap is unsupported"
       exit 2
       ;;
   esac
-
-  mkdir -p /usr/local/lib/python3.13/site-packages
-  mkdir -p /usr/lib/python3.13/site-packages
 }
 
 function bootstrapOnFedora() {
@@ -603,12 +603,12 @@ function bootstrapOnFedora() {
       sdl2-compat-devel \
       SDL2_image-devel \
       libtool-ltdl-devel
+
+      mkdir -p /usr/local/lib/python3.14/site-packages
   else
     echo "Sorry, Fedora ${LINUX_VERSION_ID} is no longer supported"
     exit 2
   fi
-
-  mkdir -p /usr/local/lib/python3.14/site-packages
 }
 
 function bootstrapOnRedHat() {
